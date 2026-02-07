@@ -21,7 +21,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Content": {
       "type": "json",
@@ -29,7 +30,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "service": {
       "type": "relation",

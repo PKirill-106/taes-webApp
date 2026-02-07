@@ -21,7 +21,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Short_Title": {
       "type": "string",
@@ -29,7 +30,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Paragraph": {
       "type": "string",
@@ -37,7 +39,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "List": {
       "type": "json",
@@ -45,7 +48,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false
     },
     "Button_Text": {
       "type": "string",
@@ -61,7 +65,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "white"
     },
     "Button_Color": {
       "type": "string",
@@ -69,7 +74,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "grey"
     },
     "Order": {
       "type": "integer",

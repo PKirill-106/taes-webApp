@@ -21,7 +21,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Slug": {
       "type": "string",
@@ -29,7 +30,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": false
     },
     "Description": {
       "type": "richtext",
@@ -37,7 +40,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Image": {
       "type": "media",
@@ -47,6 +51,7 @@
         }
       },
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",

@@ -451,13 +451,15 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Schema.Attribute.DefaultTo<'white'>;
     Button_Color: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Schema.Attribute.DefaultTo<'grey'>;
     Button_Text: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -482,6 +484,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
         };
       }>;
     Paragraph: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -490,17 +493,57 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Service: Schema.Attribute.Relation<'oneToOne', 'api::service.service'>;
     Short_Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCompanyDataCompanyData extends Struct.SingleTypeSchema {
+  collectionName: 'company_datas';
+  info: {
+    displayName: 'Company Data';
+    pluralName: 'company-datas';
+    singularName: 'company-data';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.Email & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::company-data.company-data'
+    > &
+      Schema.Attribute.Private;
+    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    Phone: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-phone-validator-5.phone',
+        {
+          country: 'ua';
+        }
+      >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -537,16 +580,15 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::partner.partner'
     >;
-    Logo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    > &
+    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     Name: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -560,6 +602,7 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
       }>;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -591,10 +634,8 @@ export interface ApiRecommendationRecommendation
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    > &
+    Image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -608,6 +649,7 @@ export interface ApiRecommendationRecommendation
     Partner: Schema.Attribute.Relation<'oneToOne', 'api::partner.partner'>;
     publishedAt: Schema.Attribute.DateTime;
     Text: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -637,6 +679,7 @@ export interface ApiServiceSectionServiceSection
   };
   attributes: {
     Content: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -653,6 +696,7 @@ export interface ApiServiceSectionServiceSection
     publishedAt: Schema.Attribute.DateTime;
     service: Schema.Attribute.Relation<'oneToOne', 'api::service.service'>;
     Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -684,12 +728,14 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -702,12 +748,14 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1231,6 +1279,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::banner.banner': ApiBannerBanner;
+      'api::company-data.company-data': ApiCompanyDataCompanyData;
       'api::partner.partner': ApiPartnerPartner;
       'api::recommendation.recommendation': ApiRecommendationRecommendation;
       'api::service-section.service-section': ApiServiceSectionServiceSection;

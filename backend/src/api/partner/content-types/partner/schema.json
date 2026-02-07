@@ -21,7 +21,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Slug": {
       "type": "string",
@@ -29,7 +30,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Description": {
       "type": "string",
@@ -37,7 +39,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false
     },
     "Logo": {
       "type": "media",
@@ -46,7 +49,8 @@
           "localized": true
         }
       },
-      "multiple": true,
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -60,7 +64,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false
     }
   }
 }

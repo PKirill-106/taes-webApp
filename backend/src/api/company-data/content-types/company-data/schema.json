@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_datas",
+  "info": {
+    "singularName": "company-data",
+    "pluralName": "company-datas",
+    "displayName": "Company Data"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Phone": {
+      "type": "customField",
+      "customField": "plugin::strapi-phone-validator-5.phone",
+      "options": {
+        "country": "ua"
+      },
+      "required": true
+    }
+  }
+}
