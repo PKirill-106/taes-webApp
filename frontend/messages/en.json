@@ -5,6 +5,7 @@
 		{ "name": "Recomendations", "slug": "recomendations" },
 		{ "name": "Contact", "slug": "contact" }
 	],
+	"Footer": { "name": "Privacy policy", "slug": "privacy-policy" },
 	"HomePage": {
 		"title": "Привіт!"
 	}

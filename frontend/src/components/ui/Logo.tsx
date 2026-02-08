@@ -24,7 +24,7 @@ export default function Logo(props: ILogo) {
 				src={
 					props.type === 'main'
 						? `http://localhost:1337${data?.Logo.url}`
-						: `http://localhost:1337${data?.White_Logo}`
+						: `http://localhost:1337${data?.White_Logo.url}`
 				}
 				alt='TAES logo'
 				width={props.width}

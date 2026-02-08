@@ -6,11 +6,14 @@ export default function Navbar() {
 	return (
 		<header className='section-container max-w-none md:mb-14'>
 			<div className='flex gap-4 justify-between items-center'>
-				<div className=''>
+				<div>
 					<Logo type='main' height={120} width={120} />
 				</div>
-				<nav className=''>
-					<NavList style='hidden md:flex items-center justify-end gap-8 lg:gap-10 text-heading text-xs sm:text-sm md:text-base lg:text-lg' />
+				<nav>
+					<NavList
+						showLocaleSwitch={true}
+						style='hidden md:flex items-center justify-end gap-8 lg:gap-10 text-heading text-xs sm:text-sm md:text-base lg:text-lg'
+					/>
 					<div className='md:hidden'>
 						<BurgerMenu />
 					</div>

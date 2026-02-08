@@ -7,6 +7,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { Montserrat, Roboto } from 'next/font/google'
 import NotFound from '../not-found'
 import './globals.css'
+import Footer from '@/components/layout/Footer'
 
 export const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -54,7 +55,7 @@ export default async function RootLayout({
 						<div className='min-h-screen flex flex-col'>
 							<Navbar />
 							<main className='main-section'>{children}</main>
-							{/* <Footer /> */}
+							<Footer />
 						</div>
 					</ClientProvider>
 				</NextIntlClientProvider>

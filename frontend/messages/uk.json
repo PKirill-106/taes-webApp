@@ -5,6 +5,10 @@
 		{ "name": "Рекомендації партнерів", "slug": "recomendations" },
 		{ "name": "Контакти", "slug": "contact" }
 	],
+	"Footer": {
+		"name": "Політика конфіденційності",
+		"slug": "privacy-policy"
+	},
 	"HomePage": {
 		"title": "Привіт!"
 	}

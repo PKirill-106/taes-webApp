@@ -187,6 +187,9 @@ h3 {
 	.hover-active-text {
 		@apply hover:text-primary active:text-primary ease-out duration-300 transition-all cursor-pointer;
 	}
+	.footer-link {
+		@apply hover:text-secondary active:text-secondary ease-out duration-300 transition-all cursor-pointer;
+	}
 	.list-size {
 		@apply text-xs md:text-sm lg:text-base font-light;
 	}

@@ -7,9 +7,7 @@ export default function BurgerMenu() {
 	const { isOpen, setIsOpen, ref: menuRef } = useClickoutside()
 
 	return (
-		<div 
-      ref={menuRef}
-    className='flex justify-end'>
+		<div ref={menuRef} className='flex justify-end'>
 			<Menu
 				className='link-size link-hover m-2'
 				onClick={() => setIsOpen(!isOpen)}
@@ -24,7 +22,10 @@ export default function BurgerMenu() {
 						<X className='h-6 w-6' />
 					</button>
 					<hr />
-					<NavList style='flex flex-col md:hidden gap-8' />
+					<NavList
+						showLocaleSwitch={true}
+						style='flex flex-col md:hidden gap-8'
+					/>
 				</div>
 			</div>
 		</div>
