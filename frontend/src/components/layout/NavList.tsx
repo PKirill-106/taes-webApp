@@ -17,7 +17,7 @@ export default function NavList({ style }: INavList) {
 			{keys.map(key => (
 				<li key={key}>
 					<Link href={`/${t(`${key}.slug`)}`} className='hover-active-text'>
-						<span>{t(`${key}.name`)}</span>
+						{t(`${key}.name`)}
 					</Link>
 				</li>
 			))}

@@ -10,7 +10,7 @@ export default function Navbar() {
 					<Logo type='main' height={120} width={120} />
 				</div>
 				<nav className=''>
-					<NavList style='hidden md:flex items-center justify-end gap-5 lg:gap-6 text-heading' />
+					<NavList style='hidden md:flex items-center justify-end gap-8 lg:gap-10 text-heading text-xs sm:text-sm md:text-base lg:text-lg' />
 					<div className='md:hidden'>
 						<BurgerMenu />
 					</div>
