@@ -1,5 +1,11 @@
 {
+	"Navbar": [
+		{ "name": "Services", "slug": "services" },
+		{ "name": "About", "slug": "about" },
+		{ "name": "Recomendations", "slug": "recomendations" },
+		{ "name": "Contact", "slug": "contact" }
+	],
 	"HomePage": {
-		"title": "Hello world!"
+		"title": "Привіт!"
 	}
 }

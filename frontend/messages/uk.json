@@ -1,10 +1,10 @@
 {
-	"Navbar": {
-		"navItem1": "Послуги",
-		"navItem2": "Про нас",
-		"navItem3": "Рекомендації партнерів",
-		"navItem4": "Контакти"
-	},
+	"Navbar": [
+		{ "name": "Послуги", "slug": "services" },
+		{ "name": "Про нас", "slug": "about" },
+		{ "name": "Рекомендації партнерів", "slug": "recomendations" },
+		{ "name": "Контакти", "slug": "contact" }
+	],
 	"HomePage": {
 		"title": "Привіт!"
 	}

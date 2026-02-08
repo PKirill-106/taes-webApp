@@ -3,9 +3,8 @@ import { routing } from '@/i18n/routing'
 import ClientProvider from '@/providers/clientProvider'
 import type { Metadata } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { Montserrat, Roboto } from 'next/font/google'
-import { Toaster } from 'react-hot-toast'
 import NotFound from '../not-found'
 import './globals.css'
 
@@ -27,6 +26,10 @@ export const metadata: Metadata = {
 	},
 }
 
+export function generateStaticParams() {
+	return routing.locales.map(locale => ({ locale }))
+}
+
 export default async function RootLayout({
 	children,
 	params,
@@ -39,6 +42,8 @@ export default async function RootLayout({
 		NotFound()
 	}
 
+	setRequestLocale(locale)
+
 	const messages = await getMessages()
 
 	return (
@@ -46,7 +51,6 @@ export default async function RootLayout({
 			<body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
 				<NextIntlClientProvider messages={messages}>
 					<ClientProvider>
-						<Toaster position='top-center' />
 						<div className='min-h-screen flex flex-col'>
 							<Navbar />
 							<main className='main-section'>{children}</main>

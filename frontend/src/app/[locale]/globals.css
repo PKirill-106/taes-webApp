@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -118,6 +118,10 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 2px;
 	border: 8px solid foreground;
 }
+html body[data-scroll-locked] {
+	overflow-y: scroll !important;
+	margin-right: 0px !important;
+}
 
 h1,
 h2,
@@ -132,6 +136,12 @@ h3 {
 }
 
 @layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
 	section {
 		@apply py-16 px-2 lg:px-15 xl:px-30;
 	}
@@ -175,7 +185,7 @@ h3 {
 		@apply hover:text-primary active:text-primary hover:scale-120 active:scale-120 duration-300 transition-all cursor-pointer;
 	}
 	.hover-active-text {
-		@apply hover:text-secondary active:text-secondary ease-out duration-300 transition-all cursor-pointer;
+		@apply hover:text-primary active:text-primary ease-out duration-300 transition-all cursor-pointer;
 	}
 	.list-size {
 		@apply text-xs md:text-sm lg:text-base font-light;
@@ -217,13 +227,4 @@ h3 {
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-	}
-  body {
-    @apply bg-background text-foreground;
-	}
 }

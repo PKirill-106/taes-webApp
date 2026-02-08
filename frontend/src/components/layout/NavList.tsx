@@ -1,18 +1,29 @@
-'use client'
+import { useMessages, useTranslations } from 'next-intl'
+import LocaleSwitcher from '../LocaleSwitcher'
 import Link from 'next/link'
 
-export default function NavList() {
-	const navlinkData = ['Home', 'About', 'Services', 'Contact']
+interface INavList {
+	style: string
+}
+
+export default function NavList({ style }: INavList) {
+	const t = useTranslations('Navbar')
+
+	const messages = useMessages()
+	const keys = Object.keys(messages.Navbar)
 
 	return (
-		<ul className='hidden md:flex items-center justify-end gap-5 lg:gap-6'>
-			{navlinkData.map(el => (
-				<li key={el}>
-					<Link href={`/${el}`}>
-						<span>{el}</span>
+		<ul className={style}>
+			{keys.map(key => (
+				<li key={key}>
+					<Link href={`/${t(`${key}.slug`)}`} className='hover-active-text'>
+						<span>{t(`${key}.name`)}</span>
 					</Link>
 				</li>
 			))}
+			<li>
+				<LocaleSwitcher />
+			</li>
 		</ul>
 	)
 }

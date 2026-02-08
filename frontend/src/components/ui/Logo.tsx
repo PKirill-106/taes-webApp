@@ -3,9 +3,9 @@
 import { useGetCompanyDataQuery } from '@/state/company/companyApiSlice'
 import { ILogo } from '@/types/interfacesProps'
 import Image from 'next/image'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import MyTooltip from '../ui/MyTooltip'
+import Link from 'next/link'
 
 export default function Logo(props: ILogo) {
 	const { data, isLoading, isError } = useGetCompanyDataQuery()
@@ -13,7 +13,7 @@ export default function Logo(props: ILogo) {
 	const pathname = usePathname()
 
 	if (isLoading || isError) return
-	console.log(`${data?.Logo.url}`)
+
 	const logoContent = (
 		<div
 			className={`${
