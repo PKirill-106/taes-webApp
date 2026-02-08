@@ -1,4 +1,3 @@
-'use client'
 import Logo from '../ui/Logo'
 import NavList from './NavList'
 
