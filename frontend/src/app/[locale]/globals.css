@@ -51,6 +51,7 @@
 	--color-secondary: #d1dbff;
 	--color-tertiary: #f6f8ff;
 	--color-accent: #dc476c;
+	--color-contrast: #5c74cc;
 	--color-transparent: rgba(0, 0, 0, 0.1);
 	--color-transparent-text: rgba(0, 0, 0, 0.4);
 	--color-sidebar-ring: var(--sidebar-ring);
@@ -185,7 +186,7 @@ h3 {
 		@apply hover:text-primary active:text-primary hover:scale-120 active:scale-120 duration-300 transition-all cursor-pointer;
 	}
 	.hover-active-text {
-		@apply hover:text-primary active:text-primary ease-out duration-300 transition-all cursor-pointer;
+		@apply hover:text-contrast active:text-contrast ease-out duration-300 transition-all cursor-pointer;
 	}
 	.footer-link {
 		@apply hover:text-secondary active:text-secondary ease-out duration-300 transition-all cursor-pointer;
