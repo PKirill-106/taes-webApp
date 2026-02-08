@@ -42,3 +42,19 @@ export interface IService {
 	locale: string
 	Slug: string
 }
+export interface ICompanyData {
+	id: number
+	documentId: string
+	Email: string
+	Phone: string
+	createdAt: string
+	updatedAt: string
+	publishedAt: string
+	Logo: ICompanyLogo
+	White_Logo: ICompanyLogo
+}
+export interface ICompanyLogo {
+	id: number
+	documentId: string
+	url: string
+}

@@ -5,10 +5,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import MyTooltip from '../ui/MyTooltip'
+import { useGetCompanyDataQuery } from '@/state/company/companyApiSlice'
+import { baseURL } from '@/lib/utils/api/axios'
 
 export default function Logo(props: ILogo) {
+	const { data, isLoading, isError } = useGetCompanyDataQuery()
+
 	const pathname = usePathname()
 
+	if (isLoading || isError) return
+	console.log(`${data?.Logo.url}`)
 	const logoContent = (
 		<div
 			className={`${
@@ -16,11 +22,14 @@ export default function Logo(props: ILogo) {
 			}`}
 		>
 			<Image
-				src={props.type === 'main' ? '/logo/logo.svg' : '/logo/small-logo.svg'}
-				alt='beauty house logo'
+				src={
+					props.type === 'main'
+						? `http://localhost:1337${data?.Logo.url}`
+						: `http://localhost:1337${data?.White_Logo}`
+				}
+				alt='TAES logo'
 				width={props.width}
 				height={props.height}
-				className='md:hidden'
 			/>
 		</div>
 	)
