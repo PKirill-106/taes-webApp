@@ -2,14 +2,12 @@
 
 import { clearAndFormatPhoneNumber } from '@/lib/utils/helpers'
 import { useGetCompanyDataQuery } from '@/state/company/companyApiSlice'
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { Spinner } from '../ui/spinner'
 
 export default function ContactFooter() {
 	const locale = useLocale()
-	const { data: company, isLoading, isError } = useGetCompanyDataQuery()
-
-  const t = useTranslations('Footer')
+	const { data: company, isLoading, isError } = useGetCompanyDataQuery(locale)
 
 	if (isLoading) {
 		return <Spinner />
@@ -33,8 +31,8 @@ export default function ContactFooter() {
 	return (
 		<>
 			<div className='flex flex-col gap-2'>
-				<span>м. Київ, вул. Софіївська, 18, офіс 3</span>
-				<span>Пн-Пт: з 10:00 до 19:00</span>
+				<span>{company.Adress}</span>
+				<span>{company.WorkHours}</span>
 			</div>
 			<div className='flex flex-col lg:flex-row gap-2 lg:gap-4'>
 				{footerContacts.map(data => (

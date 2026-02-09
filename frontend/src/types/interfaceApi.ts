@@ -50,6 +50,9 @@ export interface ICompanyData {
 	createdAt: string
 	updatedAt: string
 	publishedAt: string
+	locale: string
+	Adress: string
+	WorkHours: string
 	Logo: ICompanyLogo
 	White_Logo: ICompanyLogo
 }

@@ -2,13 +2,15 @@
 
 import { useGetCompanyDataQuery } from '@/state/company/companyApiSlice'
 import { ILogo } from '@/types/interfacesProps'
+import { useLocale } from 'next-intl'
 import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import MyTooltip from '../ui/MyTooltip'
-import Link from 'next/link'
 
 export default function Logo(props: ILogo) {
-	const { data, isLoading, isError } = useGetCompanyDataQuery()
+	const locale = useLocale()
+	const { data, isLoading, isError } = useGetCompanyDataQuery(locale)
 
 	const pathname = usePathname()
 
