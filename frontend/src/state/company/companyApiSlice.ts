@@ -10,9 +10,6 @@ export const companyApi = createApi({
 		getCompanyData: builder.query<ICompanyData, string>({
 			queryFn: async locale => {
 				return await apiWrapper(async () => {
-					console.log(
-						`/company-data?populate[Logo][fields][0]=url&populate[White_Logo][fields][1]=url${locale === 'en' && '&locale=en'}`,
-					)
 					const res: ResponseType<ICompanyData> = await api.get(
 						`/company-data?populate[Logo][fields][0]=url&populate[White_Logo][fields][1]=url${locale === 'en' ? '&locale=en' : ''}`,
 					)
