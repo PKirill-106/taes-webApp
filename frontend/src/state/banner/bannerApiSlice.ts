@@ -7,22 +7,11 @@ export const bannerApi = createApi({
 	reducerPath: 'bannerApi',
 	baseQuery: fakeBaseQuery(),
 	endpoints: builder => ({
-		getBannersUa: builder.query<IBanner[], void>({
-			queryFn: async () => {
+		getBanners: builder.query<IBanner[], string>({
+			queryFn: async locale => {
 				return await apiWrapper(async () => {
 					const res: ResponseType<IBanner[]> = await api.get(
-						'/banners?populate[Service][fields]=documentId',
-					)
-
-					return res.data.data
-				})
-			},
-		}),
-		getBannersEng: builder.query<IBanner[], void>({
-			queryFn: async () => {
-				return await apiWrapper(async () => {
-					const res: ResponseType<IBanner[]> = await api.get(
-						'/banners?populate[Service][fields]=documentId&locale=en',
+						`/banners?populate[Service][fields]=documentId${locale === 'en' ? '&locale=en' : ''}`,
 					)
 
 					return res.data.data
@@ -32,4 +21,4 @@ export const bannerApi = createApi({
 	}),
 })
 
-export const { useGetBannersUaQuery, useGetBannersEngQuery } = bannerApi
+export const { useGetBannersQuery } = bannerApi

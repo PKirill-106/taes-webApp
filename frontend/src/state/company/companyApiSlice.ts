@@ -7,11 +7,14 @@ export const companyApi = createApi({
 	reducerPath: 'companyApi',
 	baseQuery: fakeBaseQuery(),
 	endpoints: builder => ({
-		getCompanyData: builder.query<ICompanyData, void>({
-			queryFn: async () => {
+		getCompanyData: builder.query<ICompanyData, string>({
+			queryFn: async locale => {
 				return await apiWrapper(async () => {
+					console.log(
+						`/company-data?populate[Logo][fields][0]=url&populate[White_Logo][fields][1]=url${locale === 'en' && '&locale=en'}`,
+					)
 					const res: ResponseType<ICompanyData> = await api.get(
-						'/company-data?populate[Logo][fields][0]=url&populate[White_Logo][fields][1]=url',
+						`/company-data?populate[Logo][fields][0]=url&populate[White_Logo][fields][1]=url${locale === 'en' ? '&locale=en' : ''}`,
 					)
 
 					return res.data.data
