@@ -3,15 +3,13 @@
 import { clearAndFormatPhoneNumber } from '@/lib/utils/helpers'
 import { useGetCompanyDataQuery } from '@/state/company/companyApiSlice'
 import { useLocale } from 'next-intl'
-import { Spinner } from '../ui/spinner'
+import { Skeleton } from '../ui/skeleton'
 
 export default function ContactFooter() {
 	const locale = useLocale()
 	const { data: company, isLoading, isError } = useGetCompanyDataQuery(locale)
 
-	if (isLoading) {
-		return <Spinner />
-	} else if (isError || !company) {
+	if (isError || !company) {
 		return null
 	}
 
@@ -31,17 +29,29 @@ export default function ContactFooter() {
 	return (
 		<>
 			<div className='flex flex-col gap-2'>
-				<span>{company.Adress}</span>
-				<span>{company.WorkHours}</span>
+				{isLoading ? (
+					[...Array(2)].map((_, id) => (
+						<Skeleton key={id} className='w-full h-4 bg-neutral-400' />
+					))
+				) : (
+					<>
+						<span>{company.Adress}</span>
+						<span>{company.WorkHours}</span>
+					</>
+				)}
 			</div>
 			<div className='flex flex-col lg:flex-row gap-2 lg:gap-4'>
-				{footerContacts.map(data => (
-					<a key={data.href} href={data.href} className='flex-1'>
-						<div className='flex items-center justify-center border rounded-full p-2 hover:bg-white/10 active:bg-white/10 hover:text-secondary active:text-secondary ease-out duration-300 transition-all cursor-pointer transition'>
-							<span>{data.text}</span>
-						</div>
-					</a>
-				))}
+				{isLoading
+					? [...Array(2)].map((_, id) => (
+							<Skeleton key={id} className='w-full h-8 rounded-full bg-neutral-400' />
+						))
+					: footerContacts.map(data => (
+							<a key={data.href} href={data.href} className='flex-1'>
+								<div className='flex items-center justify-center border rounded-full p-2 hover:bg-white/10 active:bg-white/10 hover:text-secondary active:text-secondary ease-out duration-300 transition-all cursor-pointer'>
+									<span>{data.text}</span>
+								</div>
+							</a>
+						))}
 			</div>
 		</>
 	)

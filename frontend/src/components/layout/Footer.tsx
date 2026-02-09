@@ -12,8 +12,6 @@ export default function Footer() {
 				<div className='flex flex-col md:flex-row gap-4 md:gap-8 justify-between'>
 					<div className='flex flex-col flex-1 gap-6'>
 						<ContactFooter />
-
-						<div className='flex items-center gap-4 md:gap-6'></div>
 					</div>
 
 					<div className='flex-1 lg:flex-2'>

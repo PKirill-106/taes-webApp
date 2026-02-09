@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import MyTooltip from '../ui/MyTooltip'
+import { Skeleton } from './skeleton'
 
 export default function Logo(props: ILogo) {
 	const locale = useLocale()
@@ -14,9 +15,13 @@ export default function Logo(props: ILogo) {
 
 	const pathname = usePathname()
 
-	if (isLoading || isError) return
+	if (isError) return
 
-	const logoContent = (
+	const logoContent = isLoading ? (
+		<Skeleton
+			className={`w-30 h-10 ${props.type === 'white' && 'bg-neutral-400'}`}
+		/>
+	) : (
 		<div
 			className={`${
 				pathname === '/' ? '' : 'hover:scale-105 duration-300 transition-all'
