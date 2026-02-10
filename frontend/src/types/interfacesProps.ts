@@ -12,5 +12,4 @@ export interface IMyTooltip {
 }
 export interface IBannerSlide {
 	banner: IBanner
-	bannerBgColor: string
 }

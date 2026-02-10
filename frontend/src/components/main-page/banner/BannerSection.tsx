@@ -30,25 +30,18 @@ export default function BannerSection() {
 				<Swiper
 					modules={[Pagination, Autoplay]}
 					pagination={{ clickable: true }}
-					autoplay={{ delay: 3000, disableOnInteraction: false }}
+					// autoplay={{ delay: 3000, disableOnInteraction: false }}
 					loop
 					onSwiper={swiper => (swiperRef.current = swiper)}
-					className='w-full max-w-5xl mx-auto rounded-xl shadow-lg'
+					className='w-full max-w-5xl mx-auto rounded-xl shadow-lg [&_.swiper-wrapper]:flex [&_.swiper-wrapper]:items-stretch'
 					onMouseEnter={() => swiperRef.current?.autoplay.stop()}
 					onMouseLeave={() => swiperRef.current?.autoplay.start()}
 				>
-					{banners.map(banner => {
-						const bannerBgColor = banner.Background_Color
-
-						return (
-							<SwiperSlide
-								key={banner.documentId}
-								className={`bg-${bannerBgColor}`}
-							>
-								<BannerSlide banner={banner} bannerBgColor={bannerBgColor} />
-							</SwiperSlide>
-						)
-					})}
+					{banners.map(banner => (
+						<SwiperSlide key={banner.documentId} className='h-auto!'>
+							<BannerSlide banner={banner} />
+						</SwiperSlide>
+					))}
 				</Swiper>
 			)}
 		</Section>
