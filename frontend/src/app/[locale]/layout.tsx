@@ -4,19 +4,19 @@ import ClientProvider from '@/providers/clientProvider'
 import type { Metadata } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
-import { Montserrat, Roboto } from 'next/font/google'
 import NotFound from '../not-found'
 import './globals.css'
 import Footer from '@/components/layout/Footer'
+import { Montserrat, Roboto } from 'next/font/google';
 
 export const montserrat = Montserrat({
 	variable: '--font-montserrat',
-	subsets: ['latin'],
+	subsets: ['latin', 'cyrillic'],
 })
 
 export const roboto = Roboto({
 	variable: '--font-roboto',
-	subsets: ['latin'],
+	subsets: ['latin', 'cyrillic'],
 })
 
 export const metadata: Metadata = {

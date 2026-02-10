@@ -52,6 +52,9 @@
 	--color-tertiary: #f6f8ff;
 	--color-accent: #dc476c;
 	--color-contrast: #5c74cc;
+	--color-grey: #e3e3e3;
+	--color-light-grey: #fafafa;
+	--color-contrast: #5c74cc;
 	--color-transparent: rgba(0, 0, 0, 0.1);
 	--color-transparent-text: rgba(0, 0, 0, 0.4);
 	--color-sidebar-ring: var(--sidebar-ring);
@@ -126,14 +129,12 @@ html body[data-scroll-locked] {
 
 h1,
 h2,
+h3,
 h4,
 h5,
 h6 {
 	font-family: var(--font-heading);
 	padding: 0;
-}
-h3 {
-	font-family: var(--font-sans);
 }
 
 @layer base {
@@ -153,7 +154,7 @@ h3 {
 		@apply text-lg md:text-xl lg:text-2xl;
 	}
 	h3 {
-		@apply text-base/5 md:text-lg/6 lg:text-xl/5;
+		@apply text-xl/6 md:text-2xl/7 lg:text-3xl/8 font-semibold;
 	}
 	h4 {
 		@apply text-xs/5 sm:text-base/5 md:text-lg/5;
@@ -174,10 +175,10 @@ h3 {
 
 @layer components {
 	.main-section {
-		@apply flex-1 space-y-8 my-8;
+		@apply flex-1 space-y-8 mb-8;
 	}
 	.section-container {
-		@apply w-full max-w-7xl mx-auto py-2 px-4;
+		@apply w-full max-w-7xl mx-auto  px-4;
 	}
 	.link-size {
 		@apply h-5 w-5 lg:h-6 lg:w-6;
