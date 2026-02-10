@@ -1,5 +1,11 @@
 import { ReactNode } from 'react'
 
-export default function Section({ children }: { children: ReactNode }) {
-	return <div className='section-container'>{children}</div>
+export default function Section({
+	children,
+	className,
+}: {
+	children: ReactNode
+	className?: string
+}) {
+	return <div className={`section-container ${className}`}>{children}</div>
 }
