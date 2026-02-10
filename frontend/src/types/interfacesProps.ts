@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import { IBanner } from "./interfaceApi"
 
 export interface ILogo {
 	type: 'main' | 'white'
@@ -8,4 +9,8 @@ export interface ILogo {
 export interface IMyTooltip {
 	element: string | ReactNode
 	tip: string
+}
+export interface IBannerSlide {
+	banner: IBanner
+	bannerBgColor: string
 }

@@ -7,44 +7,22 @@ export const serviceApi = createApi({
 	reducerPath: 'serviceApi',
 	baseQuery: fakeBaseQuery(),
 	endpoints: builder => ({
-		getServicesUa: builder.query<IService[], void>({
-			queryFn: async () => {
+		getServices: builder.query<IService[], string>({
+			queryFn: async (locale: string) => {
 				return await apiWrapper(async () => {
 					const res: ResponseType<IService[]> = await api.get(
-						'/services?populate[Image][fields][0]=url',
+						`/services?populate[Image][fields][0]=url${locale === 'en' ? '&locale=en' : ''}`,
 					)
 
 					return res.data.data
 				})
 			},
 		}),
-		getServicesEng: builder.query<IService[], void>({
-			queryFn: async () => {
-				return await apiWrapper(async () => {
-					const res: ResponseType<IService[]> = await api.get(
-						'/services?populate[Image][fields][0]=url&locale=en',
-					)
-
-					return res.data.data
-				})
-			},
-		}),
-		getServiceUa: builder.query<IService, string>({
-			queryFn: async (id: string) => {
+		getService: builder.query<IService, { id: string; locale: string }>({
+			queryFn: async ({ id, locale }) => {
 				return await apiWrapper(async () => {
 					const res: ResponseType<IService> = await api.get(
-						`/services/${id}?populate[Image][fields][0]=url`,
-					)
-
-					return res.data.data
-				})
-			},
-		}),
-		getServiceEng: builder.query<IService, string>({
-			queryFn: async (id: string) => {
-				return await apiWrapper(async () => {
-					const res: ResponseType<IService> = await api.get(
-						`/services/${id}?populate[Image][fields][0]=url&locale=en`,
+						`/services/${id}?populate[Image][fields][0]=url${locale === 'en' ? '&locale=en' : ''}`,
 					)
 
 					return res.data.data

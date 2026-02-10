@@ -11,7 +11,7 @@ export const bannerApi = createApi({
 			queryFn: async locale => {
 				return await apiWrapper(async () => {
 					const res: ResponseType<IBanner[]> = await api.get(
-						`/banners?populate[Service][fields]=documentId${locale === 'en' ? '&locale=en' : ''}`,
+						`/banners?populate[Service][fields][0]=documentId&populate[Service][populate][Image][fields][1]=url&populate[Service][fields][2]=Slug${locale === 'en' ? '&locale=en' : ''}`,
 					)
 
 					return res.data.data

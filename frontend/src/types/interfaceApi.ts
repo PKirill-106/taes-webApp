@@ -29,6 +29,7 @@ export interface IBanner {
 	updatedAt: string
 	publishedAt: string
 	locale: string
+	Service: Pick<IService, 'id' | 'documentId' | 'Slug' | 'Image'>
 }
 
 export interface IService {
@@ -41,6 +42,7 @@ export interface IService {
 	publishedAt: string
 	locale: string
 	Slug: string
+	Image: IImage
 }
 export interface ICompanyData {
 	id: number
@@ -53,10 +55,10 @@ export interface ICompanyData {
 	locale: string
 	Adress: string
 	WorkHours: string
-	Logo: ICompanyLogo
-	White_Logo: ICompanyLogo
+	Logo: IImage
+	White_Logo: IImage
 }
-export interface ICompanyLogo {
+export interface IImage {
 	id: number
 	documentId: string
 	url: string
