@@ -30,8 +30,8 @@ export default function Logo(props: ILogo) {
 			<Image
 				src={
 					props.type === 'main'
-						? `http://localhost:1337${data?.Logo.url}`
-						: `http://localhost:1337${data?.White_Logo.url}`
+						? `${process.env.NEXT_PUBLIC_BACKEND_URL}${data?.Logo.url}`
+						: `${process.env.NEXT_PUBLIC_BACKEND_URL}${data?.White_Logo.url}`
 				}
 				alt='TAES logo'
 				width={props.width}
