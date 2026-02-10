@@ -9,6 +9,11 @@ export default function BannerSlide(props: IBannerSlide) {
 	const bannerColor = props.banner.Button_Color
 	const bannerBgColor = props.banner.Background_Color
 
+	const currentColor =
+		bannerBgColor === 'primary'
+			? 'bg-secondary text-primary'
+			: 'bg-primary text-white'
+
 	return (
 		<div
 			className={`relative flex flex-col-reverse md:flex-row gap-4 h-full p-6 overflow-hidden bg-cover bg-center ${
@@ -19,13 +24,7 @@ export default function BannerSlide(props: IBannerSlide) {
 		>
 			<div className='md:z-1 flex flex-col justify-between w-full flex-2 gap-6 md:max-w-xl description-content'>
 				<div className='space-y-3'>
-					<div
-						className={`flex w-fit px-2 rounded-sm ${
-							bannerBgColor === 'primary'
-								? 'bg-secondary text-primary'
-								: 'bg-primary text-white'
-						}`}
-					>
+					<div className={`flex w-fit px-2 rounded-sm ${currentColor}`}>
 						<p className='font-bold'>{props.banner.Short_Title}</p>
 					</div>
 					<h3>{props.banner.Title}</h3>
@@ -47,10 +46,10 @@ export default function BannerSlide(props: IBannerSlide) {
 						</li>
 					))}
 				</ul>
-				<Link href={`/service/${props.banner.Service.Slug}`}>
+				<Link href={`/service/${props.banner.Service.Slug}`} className='mb-8'>
 					<Button
 						variant='grey'
-						className={`flex items-center gap-2 bg-${bannerColor} w-full md:max-w-xs lg:max-w-sm h-full max-h-16 text-heading group`}
+						className={`flex items-center gap-2 bg-${bannerColor} w-full md:max-w-xs lg:max-w-sm h-full max-h-14 text-heading group`}
 					>
 						<p>{props.banner.Button_Text}</p>{' '}
 						<div className='relative bg-heading rounded-full p-2'>
