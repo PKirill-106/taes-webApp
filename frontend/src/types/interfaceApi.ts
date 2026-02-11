@@ -58,6 +58,19 @@ export interface ICompanyData {
 	Logo: IImage
 	White_Logo: IImage
 }
+export interface IPartner {
+	id: number
+	documentId: string
+	Name: string
+	Slug: string
+	Description: string | null
+	createdAt: string
+	updatedAt: string
+	publishedAt: string
+	locale: string
+	Order: number
+	Logo: IImage
+}
 export interface IImage {
 	id: number
 	documentId: string
