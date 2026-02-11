@@ -7,6 +7,27 @@
 	],
 	"Footer": { "name": "Privacy policy", "slug": "privacy-policy" },
 	"HomePage": {
-		"title": "Привіт!"
+		"AboutUsInNumbers": [
+			{
+				"number": "",
+				"title": "Years of Experience",
+				"descriptioin": "Independent valuation and property monitoring"
+			},
+			{
+				"number": "7",
+				"title": "Top experts",
+				"descriptioin": "Certified experts in asset management"
+			},
+			{
+				"number": "5000+",
+				"title": "Valuations Completed",
+				"descriptioin": "Over five thousand successful cases"
+			},
+			{
+				"number": "100%",
+				"title": "Satisfied Clients",
+				"descriptioin": "Every client is fully satisfied with our professional service"
+			}
+		]
 	}
 }
