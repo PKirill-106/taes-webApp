@@ -11,7 +11,7 @@ export default function Benefits() {
 	}>
 
 	return (
-		<Section className='flex flex-col md:flex-row items-stretch justify-between gap-3 md:gap-4 lg:gap-6'>
+		<Section className='flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 items-stretch justify-between gap-3 md:gap-4 lg:gap-6'>
 			{benefits.map(benefit => (
 				<div
 					key={benefit.iconLink}
@@ -25,7 +25,9 @@ export default function Benefits() {
 							className='object-contain'
 						/>
 					</div>
-					<p className='text-xl w-110 md:w-auto md:small-p text-center'>{benefit.text}</p>
+					<span className='text-base font-light w-full max-w-110 md:w-auto text-center'>
+						{benefit.text}
+					</span>
 				</div>
 			))}
 		</Section>
