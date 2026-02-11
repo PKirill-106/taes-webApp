@@ -31,3 +31,5 @@ export const serviceApi = createApi({
 		}),
 	}),
 })
+
+export const { useGetServicesQuery, useGetServiceQuery } = serviceApi
