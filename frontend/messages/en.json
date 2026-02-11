@@ -33,6 +33,28 @@
 			"title": "Experts in Valuation and Monitoring",
 			"description": "The company specializes in independent property valuation and monitoring for banks, financial institutions, and corporate clients. We operate in full compliance with the current legislation of Ukraine, the regulatory requirements of the National Bank of Ukraine, as well as the internal standards of banks and financial institutions. Our approach is built on the principles of objectivity, professional responsibility, precise calculations, and transparency in every project",
 			"buttonText": "Learn more"
-		}
+		},
+		"Benefits": [
+			{
+				"text": "Extensive practical experience in property valuation and monitoring",
+				"iconLink": "Icons-coop_quality-control"
+			},
+			{
+				"text": "Successful completion of hundreds of collateral asset inspections and reviews",
+				"iconLink": "icons-taes_work-done"
+			},
+			{
+				"text": "Expertise in diverse asset types: real estate, vehicles, equipment, and land",
+				"iconLink": "Icons-coop_flexibility"
+			},
+			{
+				"text": "Proven track record of cooperation with leading Ukrainian banks",
+				"iconLink": "icons-taes_banks"
+			},
+			{
+				"text": "Strict compliance with NBU regulations and internal financial institution standards",
+				"iconLink": "Icons-coop_law-assistance"
+			}
+		]
 	}
 }
