@@ -27,7 +27,7 @@ export default function BannerSlide(props: IBannerSlide) {
 					<div className={`flex w-fit px-2 rounded-sm ${currentColor}`}>
 						<p className='font-bold'>{props.banner.Short_Title}</p>
 					</div>
-					<h3>{props.banner.Title}</h3>
+					<h4>{props.banner.Title}</h4>
 				</div>
 				<p>{props.banner.Paragraph}</p>
 				<ul className='space-y-2'>

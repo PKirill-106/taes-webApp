@@ -154,10 +154,10 @@ h6 {
 		@apply text-3xl/8 md:text-4xl/10 lg:text-5xl/13 font-semibold;
 	}
 	h3 {
-		@apply text-xl/6 md:text-2xl/7 lg:text-3xl/8 font-semibold;
+		@apply text-2xl/6 md:text-3xl/7 lg:text-4xl/8 font-semibold;
 	}
 	h4 {
-		@apply text-xs/5 sm:text-base/5 md:text-lg/5;
+		@apply text-xl/6 md:text-2xl/7 lg:text-3xl/8 font-semibold;
 	}
 	p {
 		@apply text-base sm:text-lg md:text-lg;
@@ -200,6 +200,9 @@ h6 {
 	}
 	.small-p {
 		@apply text-xs/4 md:text-sm/5 lg:text-base/5 font-light;
+	}
+	.lead-p {
+		@apply text-lg sm:text-xl md:text-2xl font-light;
 	}
 }
 
