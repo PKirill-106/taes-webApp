@@ -142,7 +142,7 @@ h6 {
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-light-grey text-foreground;
 	}
 	section {
 		@apply py-16 px-2 lg:px-15 xl:px-30;
@@ -175,7 +175,7 @@ h6 {
 
 @layer components {
 	.main-section {
-		@apply flex-1 space-y-8 mb-8;
+		@apply flex-1 space-y-8 my-8;
 	}
 	.section-container {
 		@apply w-full max-w-7xl mx-auto  px-4;
@@ -197,6 +197,9 @@ h6 {
 	}
 	.caption {
 		@apply text-[10px] md:text-xs lg:text-sm xl:text-base font-light text-transparent-text;
+	}
+	.small-p {
+		@apply text-xs/4 md:text-sm/5 lg:text-base/5 font-light;
 	}
 }
 
