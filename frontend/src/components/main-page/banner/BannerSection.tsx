@@ -38,7 +38,7 @@ export default function BannerSection() {
 				<Swiper
 					modules={[Pagination, Autoplay]}
 					pagination={{ clickable: true }}
-					// autoplay={{ delay: 3000, disableOnInteraction: false }}
+					autoplay={{ delay: 3000, disableOnInteraction: false }}
 					loop
 					onSwiper={swiper => (swiperRef.current = swiper)}
 					onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
