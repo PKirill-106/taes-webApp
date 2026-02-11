@@ -10,7 +10,10 @@ export default function AboutUs() {
 	const description = t('description').split('.')
 
 	return (
-		<Section bgColor='bg-white' className='space-y-4 md:space-y-6 lg:space-y-8'>
+		<Section
+			layoutStyle='bg-white overflow-hidden'
+			className='space-y-4 md:space-y-6 lg:space-y-8'
+		>
 			<p className='font-bold bg-secondary text-heading w-fit rounded-full px-2'>
 				About us
 			</p>

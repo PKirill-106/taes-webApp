@@ -15,7 +15,7 @@ export default function AboutUsInNumbers() {
 	const yearsOfExperience = currentYear - startYear
 
 	return (
-		<Section bgColor='bg-white'>
+		<Section layoutStyle='bg-white'>
 			<div className='flex flex-col md:flex-row text-center md:text-start md:items-baseline justify-between gap-8 md:gap-4'>
 				{stats.map((item, index) => (
 					<div

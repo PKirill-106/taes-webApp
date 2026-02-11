@@ -19,7 +19,7 @@ export default function ImageContainer() {
 	const x = useTransform(scrollYProgress, [0, 1], ['0%', '-14%'])
 
 	return (
-		<div ref={containerRef} className='relative'>
+		<div ref={containerRef} className='relative whitespace-nowrap'>
 			<motion.div style={{ x }} className='flex gap-6 w-max'>
 				{[...Array(4)].map((_, index) => (
 					<div key={index} className='p-6 rounded-2xl shadow-lg bg-white'>

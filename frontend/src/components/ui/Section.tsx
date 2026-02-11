@@ -3,14 +3,14 @@ import { ReactNode } from 'react'
 export default function Section({
 	children,
 	className,
-	bgColor
+	layoutStyle
 }: {
 	children: ReactNode
 	className?: string
-	bgColor?: string
+	layoutStyle?: string
 }) {
 	return (
-		<section className={bgColor}>
+		<section className={layoutStyle}>
 			<div className={`section-container ${className}`}>{children}</div>
 		</section>
 	)
