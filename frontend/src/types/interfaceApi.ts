@@ -13,7 +13,16 @@ export interface IResponseApi<T> {
 }
 export type ResponseType<T> = AxiosResponse<IResponseApi<T>>
 export type ErrorType = { status: string | number; message: string }
-
+export interface IRichTextBlock {
+	type: 'paragraph' | 'list' | 'heading' | 'quote'
+	format?: 'unordered' | 'ordered'
+	children: {
+		text?: string
+		bold?: boolean
+		type: 'text'
+		children?: IRichTextBlock[]
+	}[]
+}
 export interface IBanner {
 	id: number
 	documentId: string
@@ -55,8 +64,10 @@ export interface ICompanyData {
 	locale: string
 	Adress: string
 	WorkHours: string
+	Description: IRichTextBlock[]
 	Logo: IImage
 	White_Logo: IImage
+	Certificates: IImage[]
 }
 export interface IPartner {
 	id: number

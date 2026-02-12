@@ -11,7 +11,7 @@ export const companyApi = createApi({
 			queryFn: async locale => {
 				return await apiWrapper(async () => {
 					const res: ResponseType<ICompanyData> = await api.get(
-						`/company-data?populate[Logo][fields][0]=url&populate[White_Logo][fields][1]=url${locale === 'en' ? '&locale=en' : ''}`,
+						`/company-data?populate[Logo][fields][0]=url&populate[White_Logo][fields][1]=url&populate[Certificates][fields][1]=url${locale === 'en' ? '&locale=en' : ''}`,
 					)
 
 					return res.data.data
