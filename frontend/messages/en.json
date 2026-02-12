@@ -59,6 +59,7 @@
 		"Partners": {
 			"title": "Our Partners",
 			"text": "The company has extensive practical experience collaborating with Ukrainian banking institutions in property valuation and collateral monitoring."
-		}
+		},
+		"Recommendations": { "title": "Partner recommendations" }
 	}
 }

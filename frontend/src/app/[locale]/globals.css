@@ -148,7 +148,7 @@ h6 {
 		@apply py-16 px-2 lg:px-15 xl:px-30;
 	}
 	h1 {
-		@apply text-xl md:text-2xl lg:text-3xl;
+		@apply text-6xl md:text-7xl lg:text-8xl font-bold;
 	}
 	h2 {
 		@apply text-3xl/8 md:text-4xl/10 lg:text-5xl/13 font-semibold;
@@ -203,6 +203,9 @@ h6 {
 	}
 	.lead-p {
 		@apply text-lg sm:text-xl md:text-2xl font-light;
+	}
+	.light-border {
+		@apply border-[0.6px] border-transparent-text;
 	}
 }
 
