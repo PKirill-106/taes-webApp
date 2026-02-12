@@ -27,11 +27,15 @@ export default function NavServices(props: INavServices) {
 	if (!services || isError) return null
 	return (
 		<div
-			onMouseLeave={() => props.showLocaleSwitch && setIsOpen(false)}
+			onMouseLeave={() =>
+				window.innerWidth >= 768 && props.showLocaleSwitch && setIsOpen(false)
+			}
 			className='relative group'
 		>
 			<div
-				onMouseEnter={() => props.showLocaleSwitch && setIsOpen(true)}
+				onMouseEnter={() =>
+					window.innerWidth >= 768 && props.showLocaleSwitch && setIsOpen(true)
+				}
 				className='flex justify-between items-center'
 			>
 				<Link
@@ -48,7 +52,10 @@ export default function NavServices(props: INavServices) {
 
 				{props.showLocaleSwitch && (
 					<button
-						onClick={() => setIsOpen(!isOpen)}
+						onClick={e => {
+							e.preventDefault()
+							setIsOpen(!isOpen)
+						}}
 						className={`m-2 hover-active-text ${props.showLocaleSwitch ? 'md:hidden' : ''}`}
 					>
 						<ChevronRight

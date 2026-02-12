@@ -58,7 +58,7 @@ export default function Navbar() {
 						animate={{ y: 0, opacity: 1 }}
 						exit={{ y: -120, opacity: 0 }}
 						transition={{ duration: 0.4, ease: 'easeOut' }}
-						className='fixed top-4 left-0 right-0 z-50 flex justify-center'
+						className='fixed top-0 md:top-4 left-0 right-0 z-20 flex justify-center'
 					>
 						<div className='w-full max-w-7xl px-6 py-3 rounded-lg bg-white/70 backdrop-blur-xl shadow-xl border border-white/40'>
 							{NavbarContent}

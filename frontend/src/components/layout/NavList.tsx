@@ -1,3 +1,4 @@
+'use client'
 import { useMessages, useTranslations } from 'next-intl'
 import LocaleSwitcher from '../LocaleSwitcher'
 import Link from 'next/link'
