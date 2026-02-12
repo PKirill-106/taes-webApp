@@ -19,7 +19,6 @@ export const apiWrapper = async <T>(
 				message,
 			},
 		}
-		console.error(error.error)
 
 		return error
 	}

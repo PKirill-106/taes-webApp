@@ -71,6 +71,17 @@ export interface IPartner {
 	Order: number
 	Logo: IImage
 }
+export interface IRecommendation {
+	id: number
+	documentId: string
+	Text: string
+	createdAt: string
+	updatedAt: string
+	publishedAt: string
+	locale: string
+	Partner: IPartner
+	Image: IImage | null
+}
 export interface IImage {
 	id: number
 	documentId: string
