@@ -1,7 +1,7 @@
 'use client'
 
 import { useGetRecommendationsQuery } from '@/state/recommendations/recommendationApiSlice'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Skeleton } from './skeleton'
 import Image from 'next/image'
 import { Button } from './button'
@@ -15,6 +15,8 @@ export default function RecommendationItem() {
 		isLoading,
 		isError,
 	} = useGetRecommendationsQuery(locale)
+
+	const t = useTranslations('HomePage.Recommendations')
 
 	if (isLoading) {
 		return (
@@ -74,7 +76,7 @@ export default function RecommendationItem() {
 								<Dialog>
 									<DialogTrigger asChild>
 										<Button variant='outline' className='w-full md:w-auto'>
-											Рекомендаційний лист
+											{t('buttonText')}
 											<div className='bg-heading rounded-full p-2'>
 												<ArrowUpRight className='size-3 stroke-3 text-white group-hover: duration-200' />
 											</div>
