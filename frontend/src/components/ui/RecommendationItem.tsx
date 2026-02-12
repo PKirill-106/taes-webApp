@@ -6,6 +6,7 @@ import { Skeleton } from './skeleton'
 import Image from 'next/image'
 import { Button } from './button'
 import { ArrowUpRight } from 'lucide-react'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from './dialog'
 
 export default function RecommendationItem() {
 	const locale = useLocale()
@@ -30,11 +31,12 @@ export default function RecommendationItem() {
 		<div className='flex flex-col md:flex-row gap-6'>
 			{recommendations.map((r, id) => {
 				const isEven = id % 2 === 0
+				const letterUrl = r.Image?.url
 
 				return (
 					<div
 						key={r.documentId}
-						className={`flex flex-col justify-between rounded-3xl border space-y-6 p-4 transition-colors
+						className={`flex flex-col justify-between rounded-lg border space-y-6 p-4 transition-colors
               ${isEven ? 'bg-tertiary' : 'bg-light-grey'}
             `}
 					>
@@ -68,13 +70,33 @@ export default function RecommendationItem() {
 								</div>
 							</div>
 
-							{r.Image?.url && (
-								<Button variant='outline' className='w-full md:w-auto'>
-									Рекомендаційний лист
-									<div className='bg-heading rounded-full p-2'>
-										<ArrowUpRight className='size-3 stroke-3 text-white group-hover: duration-200' />
-									</div>
-								</Button>
+							{letterUrl && (
+								<Dialog>
+									<DialogTrigger asChild>
+										<Button variant='outline' className='w-full md:w-auto'>
+											Рекомендаційний лист
+											<div className='bg-heading rounded-full p-2'>
+												<ArrowUpRight className='size-3 stroke-3 text-white group-hover: duration-200' />
+											</div>
+										</Button>
+									</DialogTrigger>
+									<DialogContent className='md:max-w-3xl p-0 overflow-hidden bg-transparent border-none shadow-none'>
+										<DialogTitle className='sr-only'>
+											Рекомендаційний лист {r.Partner.Name}
+										</DialogTitle>
+										<div className='relative w-full h-[80vh]'>
+											<Image
+												src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${letterUrl}`}
+												alt={`Letter from ${r.Partner.Name}`}
+												fill
+												className='object-contain'
+												quality={100}
+												unoptimized
+												loading='lazy'
+											/>
+										</div>
+									</DialogContent>
+								</Dialog>
 							)}
 						</div>
 					</div>
