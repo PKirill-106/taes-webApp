@@ -20,3 +20,7 @@ export interface IBannerPagination {
 	activeColor: string
 	inactiveColor: string
 }
+export interface INavServices {
+	itemKey: string
+	showLocaleSwitch: boolean
+}

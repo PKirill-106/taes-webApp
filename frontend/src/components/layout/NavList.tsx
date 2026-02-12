@@ -1,6 +1,7 @@
 import { useMessages, useTranslations } from 'next-intl'
 import LocaleSwitcher from '../LocaleSwitcher'
 import Link from 'next/link'
+import NavServices from './NavServices'
 
 interface INavList {
 	style: string
@@ -16,14 +17,18 @@ export default function NavList({ style, showLocaleSwitch }: INavList) {
 
 	return (
 		<ul className={style}>
-			{keys.map(key => (
-				<li key={key}>
-					<Link
-						href={`/${t(`${key}.slug`)}`}
-						className={showLocaleSwitch ? 'hover-active-text' : 'footer-link'}
-					>
-						{t(`${key}.name`)}
-					</Link>
+			{keys.map((key, id) => (
+				<li key={id}>
+					{id === 0 ? (
+						<NavServices itemKey={key} showLocaleSwitch={showLocaleSwitch} />
+					) : (
+						<Link
+							href={`/${t(`${key}.slug`)}`}
+							className={showLocaleSwitch ? 'hover-active-text' : 'footer-link'}
+						>
+							{t(`${key}.name`)}
+						</Link>
+					)}
 				</li>
 			))}
 			<li>
