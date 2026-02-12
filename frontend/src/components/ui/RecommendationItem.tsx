@@ -29,7 +29,7 @@ export default function RecommendationItem() {
 
 	return (
 		<div className='flex flex-col md:flex-row gap-6'>
-			{recommendations.map((r, id) => {
+			{recommendations.slice(0, 2).map((r, id) => {
 				const isEven = id % 2 === 0
 				const letterUrl = r.Image?.url
 
