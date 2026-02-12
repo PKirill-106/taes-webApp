@@ -65,5 +65,9 @@
 			"buttonText": "Recommendation letter",
 			"linkText": "Other recommendations"
 		}
+	},
+	"AboutUsPage": {
+		"title": "About Us",
+		"sectionTitle": "Certificates"
 	}
 }

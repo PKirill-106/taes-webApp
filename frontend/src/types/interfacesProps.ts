@@ -1,5 +1,6 @@
-import { ReactNode } from 'react'
-import { IBanner } from './interfaceApi';
+import { Dispatch, ReactNode, RefObject, SetStateAction } from 'react'
+import type { Swiper as SwiperType } from 'swiper'
+import { IBanner } from './interfaceApi'
 
 export interface ILogo {
 	type: 'main' | 'white'
@@ -23,4 +24,13 @@ export interface IBannerPagination {
 export interface INavServices {
 	itemKey: string
 	showLocaleSwitch: boolean
+}
+export interface ICertModal {
+	modalImage: string | null
+	setModalImage: Dispatch<SetStateAction<string | null>>
+}
+export interface ICertButtons {
+	swiperRef: RefObject<SwiperType | null>
+	isBeginning: boolean
+	isEnd: boolean
 }
