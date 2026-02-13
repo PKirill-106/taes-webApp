@@ -1,13 +1,13 @@
 'use client'
-import Map from '@/components/ui/Map'
 import MainServices from '@/components/services/MainServices'
 import ServiceSection from '@/components/services/ServiceSection'
+import { ServiceSkeleton } from '@/components/services/ServiceSkeletons'
+import Map from '@/components/ui/Map'
 import Partners from '@/components/ui/Partners'
 import Section from '@/components/ui/Section'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useGetServiceQuery } from '@/state/service/serviceApiSlice'
 import { useLocale } from 'next-intl'
-import { usePathname } from 'next/navigation'
 import { use } from 'react'
 
 export default function ServicePage({
@@ -31,11 +31,19 @@ export default function ServicePage({
 
 	return (
 		<>
-			<MainServices service={service} />
+			{isLoading ? (
+				<Section>
+					<ServiceSkeleton />
+				</Section>
+			) : (
+				<>
+					<MainServices service={service} />
 
-			{service.Sections.map(sec => (
-				<ServiceSection key={sec.title} section={sec} />
-			))}
+					{service.Sections.map(sec => (
+						<ServiceSection key={sec.title} section={sec} />
+					))}
+				</>
+			)}
 
 			{service.Slug == 'collateral-asset-monitoring' && (
 				<Section>
