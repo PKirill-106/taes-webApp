@@ -199,7 +199,7 @@ h6 {
 		@apply text-[10px] md:text-xs lg:text-sm xl:text-base font-light text-transparent-text;
 	}
 	.small-p {
-		@apply text-xs/4 md:text-sm/5 lg:text-base/5 font-light;
+		@apply text-sm/6 md:text-sm/7 lg:text-base/8 font-light;
 	}
 	.lead-p {
 		@apply text-lg sm:text-xl md:text-2xl font-light;
