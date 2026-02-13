@@ -66,23 +66,23 @@ export default function NavServices(props: INavServices) {
 			</div>
 
 			{isOpen && (
-				<ul className='md:absolute md:left-0 flex items-center md:min-w-63 md:bg-white md:border md:border-light-border md:shadow-lg md:rounded-lg py-2 md:z-50'>
+				<div className='flex items-center md:absolute md:top-full md:left-0 md:w-max md:overflow-hidden md:bg-white md:border md:border-light-border md:shadow-lg md:rounded-lg py-2 md:z-50'>
 					{props.showLocaleSwitch && (
 						<div className='w-px bg-transparent-text py-9 md:hidden' />
 					)}
-					<div className='block space-y-2'>
+					<ul className='flex flex-col w-full py-2'>
 						{services.map(service => (
-							<li key={service.documentId}>
+							<li key={service.documentId} className='w-full'>
 								<Link
 									href={`/services/${service.Slug}`}
-									className='hover-active-text block px-4 py-2 text-sm text-heading hover:bg-secondary/20 rounded-md transition-colors'
+									className='hover-active-text block px-4 w-full py-2 text-sm text-heading hover:bg-secondary/20 rounded-md transition-colors'
 								>
 									{service.Title}
 								</Link>
 							</li>
 						))}
-					</div>
-				</ul>
+					</ul>
+				</div>
 			)}
 		</div>
 	)
