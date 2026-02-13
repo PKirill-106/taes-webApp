@@ -102,3 +102,17 @@ export interface IImage {
 	documentId: string
 	url: string
 }
+export interface IStrapiBlock {
+	type: string
+	children: { text: string; type: string; bold?: boolean; italic?: boolean }[]
+	level?: number
+}
+export interface IPrivacyPolicy {
+	id: number
+	documentId: string
+	privacy_policy: IStrapiBlock[]
+	createdAt: string
+	updatedAt: string
+	publishedAt: string
+	locale: string
+}

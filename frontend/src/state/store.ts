@@ -4,6 +4,7 @@ import { serviceApi } from './service/serviceApiSlice'
 import { companyApi } from './company/companyApiSlice'
 import { partnerApi } from './partners/partnerApiSlice'
 import { recommendationApi } from './recommendations/recommendationApiSlice'
+import { privacyApi } from './privacy/privacyApiSlice'
 
 export const store = configureStore({
 	reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
 		[companyApi.reducerPath]: companyApi.reducer,
 		[partnerApi.reducerPath]: partnerApi.reducer,
 		[recommendationApi.reducerPath]: recommendationApi.reducer,
+		[privacyApi.reducerPath]: privacyApi.reducer,
 	},
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware().concat(
@@ -20,6 +22,7 @@ export const store = configureStore({
 			companyApi.middleware,
 			partnerApi.middleware,
 			recommendationApi.middleware,
+			privacyApi.middleware,
 		),
 })
 

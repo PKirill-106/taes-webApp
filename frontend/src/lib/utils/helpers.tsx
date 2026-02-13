@@ -1,3 +1,4 @@
+import { IStrapiBlock } from '@/types/interfaceApi'
 import { ReactNode } from 'react'
 
 export const clearAndFormatPhoneNumber = (
@@ -40,5 +41,46 @@ export const formatRichText = (text: string, textColor: string): ReactNode => {
 			)
 		}
 		return part
+	})
+}
+export const renderPrivacyPolicy = (blocks: IStrapiBlock[]) => {
+	if (!blocks) return null
+
+	return blocks.map((block, index) => {
+		const content = block.children.map(child => child.text).join('')
+
+		if (!content.trim()) return null
+
+		const isHeading =
+			/^\d+\.\s/.test(content) || content === content.toUpperCase()
+
+		if (isHeading) {
+			return (
+				<h2
+					key={index}
+					className='text-2xl font-bold text-heading mt-10 mb-4 first:mt-0'
+				>
+					{content}
+				</h2>
+			)
+		}
+
+		if (content.trim().startsWith('•')) {
+			return (
+				<li
+					key={index}
+					className='ml-6 list-none flex gap-3 text-gray-700 my-2'
+				>
+					<span className='text-primary font-bold'>•</span>
+					{content.replace('•', '').trim()}
+				</li>
+			)
+		}
+
+		return (
+			<p key={index} className='text-gray-700 leading-relaxed mb-4'>
+				{content}
+			</p>
+		)
 	})
 }
