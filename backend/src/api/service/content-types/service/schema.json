@@ -35,13 +35,12 @@
       "unique": false
     },
     "Description": {
-      "type": "richtext",
+      "type": "blocks",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "required": true
+      }
     },
     "Image": {
       "type": "media",
