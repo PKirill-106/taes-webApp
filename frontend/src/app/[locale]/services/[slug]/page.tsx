@@ -26,7 +26,6 @@ export default function ServicePage({
 
 	console.log(service)
 
-	if (isLoading) return <Skeleton className='h-screen w-full' />
 	if (isError || !service) return <div>Service not found</div>
 
 	return (
