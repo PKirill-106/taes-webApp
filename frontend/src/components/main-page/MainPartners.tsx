@@ -11,7 +11,11 @@ export default function MainPartners() {
 			className='flex flex-col items-center gap-6'
 		>
 			<div className='flex flex-col items-center gap-4'>
-				<h3 className='text-center'>{t('title')}</h3>
+				<h3 className='text-center'>
+					{t.rich('title', {
+						primary: chunks => <span className='text-primary'>{chunks}</span>,
+					})}
+				</h3>
 				<p className='lead-p text-center max-w-170'>{t('text')}</p>
 			</div>
 			<Partners />

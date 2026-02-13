@@ -12,7 +12,11 @@ export default function Recommendation() {
 			layoutStyle='bg-white'
 			className='flex flex-col items-center gap-15'
 		>
-			<h3>{t('title')}</h3>
+			<h3>
+				{t.rich('title', {
+					primary: chunks => <span className='text-primary'>{chunks}</span>,
+				})}
+			</h3>
 			<div className='space-y-3 md:space-y-6'>
 				<RecommendationItem />
 				<Link

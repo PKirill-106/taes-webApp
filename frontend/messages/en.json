@@ -30,7 +30,7 @@
 			}
 		],
 		"AboutUs": {
-			"title": "Experts in Valuation and Monitoring",
+			"title": "Experts in <primary>Valuation</primary> and <primary>Monitoring</primary>",
 			"description": "The company specializes in independent property valuation and monitoring for banks, financial institutions, and corporate clients. We operate in full compliance with the current legislation of Ukraine, the regulatory requirements of the National Bank of Ukraine, as well as the internal standards of banks and financial institutions. Our approach is built on the principles of objectivity, professional responsibility, precise calculations, and transparency in every project",
 			"buttonText": "Learn more"
 		},
@@ -57,11 +57,11 @@
 			}
 		],
 		"Partners": {
-			"title": "Our Partners",
+			"title": "Our <primary>Partners</primary>",
 			"text": "The company has extensive practical experience collaborating with Ukrainian banking institutions in property valuation and collateral monitoring."
 		},
 		"Recommendations": {
-			"title": "Partner recommendations",
+			"title": "Partner <primary>recommendations</primary>",
 			"buttonText": "Recommendation letter",
 			"linkText": "Other recommendations"
 		}

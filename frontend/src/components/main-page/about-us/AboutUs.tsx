@@ -18,7 +18,11 @@ export default function AboutUs() {
 				About us
 			</p>
 			<div className='flex flex-col md:flex-row gap-6'>
-				<h2 className='flex-1 md:h-fit md:sticky md:top-0'>{t('title')}</h2>
+				<h2 className='flex-1 md:h-fit md:sticky md:top-0'>
+					{t.rich('title', {
+						primary: chunks => <span className='text-primary'>{chunks}</span>,
+					})}
+				</h2>
 				<div className='flex-2 space-y-6 md:space-y-4'>
 					<div className='space-y-3 md:space-y-4'>
 						{description.map(sentence => (
