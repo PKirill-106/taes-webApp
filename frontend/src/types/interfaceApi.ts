@@ -40,17 +40,21 @@ export interface IBanner {
 	locale: string
 	Service: Pick<IService, 'id' | 'documentId' | 'Slug' | 'Image'>
 }
-
+export interface IServiceSection {
+  title: string
+  content: string | string[]
+}
 export interface IService {
 	id: number
 	documentId: string
 	Title: string
-	Description: string
+	Description: IRichTextBlock[]
 	createdAt: string
 	updatedAt: string
 	publishedAt: string
 	locale: string
 	Slug: string
+	Sections: IServiceSection[]
 	Image: IImage
 }
 export interface ICompanyData {

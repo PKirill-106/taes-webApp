@@ -18,14 +18,14 @@ export const serviceApi = createApi({
 				})
 			},
 		}),
-		getService: builder.query<IService, { id: string; locale: string }>({
-			queryFn: async ({ id, locale }) => {
+		getService: builder.query<IService, { slug: string; locale: string }>({
+			queryFn: async ({ slug, locale }) => {
 				return await apiWrapper(async () => {
-					const res: ResponseType<IService> = await api.get(
-						`/services/${id}?populate[Image][fields][0]=url${locale === 'en' ? '&locale=en' : ''}`,
+					const res: ResponseType<IService[]> = await api.get(
+						`/services?filters[Slug][$eq]=${slug}&populate[Image][fields][0]=url${locale === 'en' ? '&locale=en' : ''}`,
 					)
 
-					return res.data.data
+					return res.data.data[0]
 				})
 			},
 		}),
