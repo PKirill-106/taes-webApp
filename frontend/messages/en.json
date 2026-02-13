@@ -75,5 +75,8 @@
 		"subTitle": "Kyiv - <primary>Head office</primary>",
 		"adress": "Adress",
 		"workingHours": "Working hours"
+	},
+	"Services": {
+		"buttonText": "Learn more"
 	}
 }

@@ -1,8 +1,15 @@
+'use client'
 import { IMainServices } from '@/types/interfacesProps'
 import Section from '../ui/Section'
 import Image from 'next/image'
+import { Button } from '../ui/button'
+import { useTranslations } from 'next-intl'
+import { ArrowUpRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function MainServices(props: IMainServices) {
+	const t = useTranslations('Services')
+
 	const renderChildren = (children: any[]) => {
 		return children.map((child, idx) => {
 			if (child.bold) {
@@ -45,6 +52,16 @@ export default function MainServices(props: IMainServices) {
 								return null
 						}
 					})}
+					{props.showButton && (
+						<Link href={`services/${props.service.Slug}`}>
+							<Button variant='secondary'>
+								{t('buttonText')}
+								<div className='bg-heading rounded-full p-2'>
+									<ArrowUpRight className='size-3 stroke-3 text-white group-hover: duration-200' />
+								</div>
+							</Button>
+						</Link>
+					)}
 				</div>
 				<div className='md:flex-1 h-40 md:h-auto relative aspect-video md:aspect-square'>
 					<Image

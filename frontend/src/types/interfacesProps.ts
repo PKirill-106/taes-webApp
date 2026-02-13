@@ -36,6 +36,7 @@ export interface ICertButtons {
 }
 export interface IMainServices {
 	service: IService
+	showButton?: boolean
 }
 export interface IServiceSectionProps {
 	section: IServiceSection

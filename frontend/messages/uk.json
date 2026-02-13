@@ -78,5 +78,8 @@
 		"subTitle": "Київ - <primary>Головний офіс</primary>",
 		"adress": "Адреса",
 		"workingHours": "Графік роботи"
+	},
+	"Services": {
+		"buttonText": "Детальніше"
 	}
 }
