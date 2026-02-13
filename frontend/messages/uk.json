@@ -3,7 +3,7 @@
 		{ "name": "Послуги", "slug": "services" },
 		{ "name": "Про нас", "slug": "about" },
 		{ "name": "Рекомендації партнерів", "slug": "recomendations" },
-		{ "name": "Контакти", "slug": "contact" }
+		{ "name": "Контакти", "slug": "contacts" }
 	],
 	"Footer": {
 		"name": "Політика конфіденційності",
@@ -72,5 +72,11 @@
 	"AboutUsPage": {
 		"title": "Про компанію",
 		"sectionTitle": "Сертифікати"
+	},
+	"Contacts": {
+		"title": "Контакти",
+		"subTitle": "Київ - <primary>Головний офіс</primary>",
+		"adress": "Адреса",
+		"workingHours": "Графік роботи"
 	}
 }

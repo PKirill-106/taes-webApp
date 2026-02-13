@@ -3,7 +3,7 @@
 		{ "name": "Services", "slug": "services" },
 		{ "name": "About", "slug": "about" },
 		{ "name": "Recomendations", "slug": "recomendations" },
-		{ "name": "Contact", "slug": "contact" }
+		{ "name": "Contacts", "slug": "contacts" }
 	],
 	"Footer": { "name": "Privacy policy", "slug": "privacy-policy" },
 	"HomePage": {
@@ -69,5 +69,11 @@
 	"AboutUsPage": {
 		"title": "About Us",
 		"sectionTitle": "Certificates"
+	},
+	"Contacts": {
+		"title": "Contacts",
+		"subTitle": "Kyiv - <primary>Head office</primary>",
+		"adress": "Adress",
+		"workingHours": "Working hours"
 	}
 }
