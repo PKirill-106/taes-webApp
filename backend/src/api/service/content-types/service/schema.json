@@ -40,7 +40,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "Image": {
       "type": "media",
@@ -57,6 +58,14 @@
         "videos",
         "audios"
       ]
+    },
+    "Sections": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

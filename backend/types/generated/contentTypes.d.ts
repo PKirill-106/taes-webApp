@@ -717,53 +717,6 @@ export interface ApiRecommendationRecommendation
   };
 }
 
-export interface ApiServiceSectionServiceSection
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'service_sections';
-  info: {
-    displayName: 'Service Section';
-    pluralName: 'service-sections';
-    singularName: 'service-section';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Content: Schema.Attribute.JSON &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::service-section.service-section'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    service: Schema.Attribute.Relation<'oneToOne', 'api::service.service'>;
-    Title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -784,6 +737,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Blocks &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -802,6 +756,12 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'api::service.service'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    Sections: Schema.Attribute.JSON &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1337,7 +1297,6 @@ declare module '@strapi/strapi' {
       'api::company-data.company-data': ApiCompanyDataCompanyData;
       'api::partner.partner': ApiPartnerPartner;
       'api::recommendation.recommendation': ApiRecommendationRecommendation;
-      'api::service-section.service-section': ApiServiceSectionServiceSection;
       'api::service.service': ApiServiceService;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
