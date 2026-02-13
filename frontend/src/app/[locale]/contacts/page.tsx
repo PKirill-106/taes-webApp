@@ -1,7 +1,7 @@
 import Contacts from '@/components/contacts/Contacts'
 import Section from '@/components/ui/Section'
 import { useTranslations } from 'next-intl'
-import Map from './Map'
+import Map from '../../../components/ui/Map'
 
 export default function ContactsPage() {
 	const t = useTranslations('Contacts')

@@ -34,3 +34,6 @@ export interface ICertButtons {
 	isBeginning: boolean
 	isEnd: boolean
 }
+export interface IMap {
+	className: string
+}

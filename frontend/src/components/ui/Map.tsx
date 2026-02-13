@@ -1,9 +1,11 @@
-export default function Map() {
+import { IMap } from "@/types/interfacesProps"
+
+export default function Map(props: IMap) {
 	const mapSrc =
 		'https://www.google.com/maps/d/embed?mid=1-Yl4H6u6ml_4D0aALfPs1qJ-CHBAbzY&ehbc=2E312F'
 
 	return (
-		<div className='flex-3 w-full aspect-square overflow-hidden rounded-lg border border-light-border shadow-sm'>
+		<div className={`flex-3 w-full overflow-hidden rounded-lg border border-light-border shadow-sm ${props.className}`}>
 			<iframe
 				src={mapSrc}
 				width='100%'
