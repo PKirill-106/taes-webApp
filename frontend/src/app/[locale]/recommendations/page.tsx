@@ -4,14 +4,16 @@ import RecommendationSkelet from '@/components/recommendations/RecommendationSke
 import Section from '@/components/ui/Section'
 import SwiperButtons from '@/components/ui/SwiperButtons'
 import { useGetRecommendationsQuery } from '@/state/recommendations/recommendationApiSlice'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRef, useState } from 'react'
 import type { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useMediaQuery } from 'usehooks-ts'
 
 export default function RecommendationPage() {
+	const isMobile = useMediaQuery('(max-width: 768px)')
+
 	const t = useTranslations('HomePage.Recommendations')
 	const locale = useLocale()
 	const { data: recommendations, isLoading } =
@@ -34,7 +36,7 @@ export default function RecommendationPage() {
 		return null
 	}
 
-	const itemsPerSlide = 4
+	const itemsPerSlide = isMobile ? 2 : 4
 	const slides = []
 	for (let i = 0; i < recommendations.length; i += itemsPerSlide) {
 		slides.push(recommendations.slice(i, i + itemsPerSlide))
@@ -48,6 +50,7 @@ export default function RecommendationPage() {
 				})}
 			</h3>
 			<Swiper
+				autoHeight={true}
 				spaceBetween={24}
 				slidesPerView={1}
 				onSwiper={swiper => {
