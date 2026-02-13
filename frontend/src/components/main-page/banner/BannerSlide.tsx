@@ -1,5 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
+import { formatRichText } from '@/lib/utils/helpers'
 import { IBannerSlide } from '@/types/interfacesProps'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
@@ -27,7 +28,12 @@ export default function BannerSlide(props: IBannerSlide) {
 					<div className={`flex w-fit px-2 rounded-sm ${currentColor}`}>
 						<p className='font-bold'>{props.banner.Short_Title}</p>
 					</div>
-					<h4>{props.banner.Title}</h4>
+					<h4>
+						{formatRichText(
+							props.banner.Title,
+							bannerBgColor === 'primary' ? 'text-secondary' : 'text-primary',
+						)}
+					</h4>
 				</div>
 				<p>{props.banner.Paragraph}</p>
 				<ul className='space-y-2'>
