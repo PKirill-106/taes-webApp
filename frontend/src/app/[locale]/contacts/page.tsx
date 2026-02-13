@@ -11,7 +11,7 @@ export default function ContactsPage() {
 			<h3 className='text-center'>{t('title')}</h3>
 			<div className='flex flex-col md:flex-row justify-between gap-6'>
 				<Contacts />
-				<Map />
+				<Map className='aspect-square' />
 			</div>
 		</Section>
 	)
