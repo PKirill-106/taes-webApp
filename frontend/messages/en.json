@@ -2,7 +2,7 @@
 	"Navbar": [
 		{ "name": "Services", "slug": "services" },
 		{ "name": "About", "slug": "about" },
-		{ "name": "Recomendations", "slug": "recomendations" },
+		{ "name": "Recommendations", "slug": "recommendations" },
 		{ "name": "Contacts", "slug": "contacts" }
 	],
 	"Footer": { "name": "Privacy policy", "slug": "privacy-policy" },

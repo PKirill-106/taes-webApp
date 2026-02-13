@@ -2,7 +2,7 @@
 	"Navbar": [
 		{ "name": "Послуги", "slug": "services" },
 		{ "name": "Про нас", "slug": "about" },
-		{ "name": "Рекомендації партнерів", "slug": "recomendations" },
+		{ "name": "Рекомендації партнерів", "slug": "recommendations" },
 		{ "name": "Контакти", "slug": "contacts" }
 	],
 	"Footer": {
