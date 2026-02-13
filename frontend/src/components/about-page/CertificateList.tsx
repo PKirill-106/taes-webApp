@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.css'
 import Section from '../ui/Section'
 import { Skeleton } from '../ui/skeleton'
-import CertButtons from './CertButtons'
+import SwiperButtons from '../ui/SwiperButtons'
 import CertModal from './CertModal'
 
 export default function CertificateList() {
@@ -85,7 +85,7 @@ export default function CertificateList() {
 						</Swiper>
 					</div>
 
-					<CertButtons
+					<SwiperButtons
 						swiperRef={swiperRef}
 						isBeginning={isBeginning}
 						isEnd={isEnd}

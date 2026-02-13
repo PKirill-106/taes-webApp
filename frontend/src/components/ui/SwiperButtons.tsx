@@ -1,7 +1,7 @@
-import { ICertButtons } from '@/types/interfacesProps'
+import { ISwiperButtons } from '@/types/interfacesProps'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-export default function CertButtons(props: ICertButtons) {
+export default function SwiperButtons(props: ISwiperButtons) {
 	return (
 		<div className='flex justify-end gap-3 pr-4'>
 			<button

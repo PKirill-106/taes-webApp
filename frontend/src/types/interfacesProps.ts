@@ -34,7 +34,7 @@ export interface ICertModal {
 	modalImage: string | null
 	setModalImage: Dispatch<SetStateAction<string | null>>
 }
-export interface ICertButtons {
+export interface ISwiperButtons {
 	swiperRef: RefObject<SwiperType | null>
 	isBeginning: boolean
 	isEnd: boolean

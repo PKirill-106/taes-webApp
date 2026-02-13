@@ -2,6 +2,7 @@
 import RecommendationItem from '@/components/recommendations/RecommendationItem'
 import RecommendationSkelet from '@/components/recommendations/RecommendationSkelet'
 import Section from '@/components/ui/Section'
+import SwiperButtons from '@/components/ui/SwiperButtons'
 import { useGetRecommendationsQuery } from '@/state/recommendations/recommendationApiSlice'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
@@ -46,7 +47,6 @@ export default function RecommendationPage() {
 					primary: chunks => <span className='text-primary'>{chunks}</span>,
 				})}
 			</h3>
-
 			<Swiper
 				spaceBetween={24}
 				slidesPerView={1}
@@ -76,23 +76,11 @@ export default function RecommendationPage() {
 				))}
 			</Swiper>
 
-			<div className='flex justify-end gap-4'>
-				<button
-					onClick={() => swiperRef.current?.slidePrev()}
-					disabled={isBeginning}
-					className='h-12 w-12 rounded-full border flex items-center justify-center disabled:opacity-40'
-				>
-					<ChevronLeft />
-				</button>
-
-				<button
-					onClick={() => swiperRef.current?.slideNext()}
-					disabled={isEnd}
-					className='h-12 w-12 rounded-full border border-primary text-primary flex items-center justify-center disabled:opacity-40'
-				>
-					<ChevronRight />
-				</button>
-			</div>
+			<SwiperButtons
+				swiperRef={swiperRef}
+				isBeginning={isBeginning}
+				isEnd={isEnd}
+			/>
 		</Section>
 	)
 }
