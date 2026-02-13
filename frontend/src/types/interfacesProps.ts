@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode, RefObject, SetStateAction } from 'react'
 import type { Swiper as SwiperType } from 'swiper'
-import { IBanner } from './interfaceApi'
+import { IBanner, IService, IServiceSection } from './interfaceApi'
 
 export interface ILogo {
 	type: 'main' | 'white'
@@ -33,6 +33,12 @@ export interface ICertButtons {
 	swiperRef: RefObject<SwiperType | null>
 	isBeginning: boolean
 	isEnd: boolean
+}
+export interface IMainServices {
+	service: IService
+}
+export interface IServiceSectionProps {
+	section: IServiceSection
 }
 export interface IMap {
 	className: string
