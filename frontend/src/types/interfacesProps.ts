@@ -1,6 +1,11 @@
 import { Dispatch, ReactNode, RefObject, SetStateAction } from 'react'
 import type { Swiper as SwiperType } from 'swiper'
-import { IBanner, IService, IServiceSection } from './interfaceApi'
+import {
+	IBanner,
+	IRecommendation,
+	IService,
+	IServiceSection,
+} from './interfaceApi'
 
 export interface ILogo {
 	type: 'main' | 'white'
@@ -43,4 +48,8 @@ export interface IServiceSectionProps {
 }
 export interface IMap {
 	className: string
+}
+export interface IRecommendationItem {
+	r: IRecommendation
+	id: number
 }
