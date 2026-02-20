@@ -48,6 +48,7 @@ export interface IServiceSectionProps {
 }
 export interface IMap {
 	className: string
+	mapSrc: string
 }
 export interface IRecommendationItem {
 	r: IRecommendation
