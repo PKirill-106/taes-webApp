@@ -41,7 +41,7 @@ services:
       postgres:
         condition: service_healthy
     env_file:
-      - .env
+      - ./backend/.env
     networks:
       - production
     # в docker-compose.yml в секции backend:
@@ -67,7 +67,7 @@ services:
     environment:
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
     env_file:
-      - .env
+      - ./frontend/.env
     depends_on:
       backend:
         condition: service_healthy
