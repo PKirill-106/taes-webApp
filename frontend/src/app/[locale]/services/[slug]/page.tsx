@@ -24,7 +24,6 @@ export default function ServicePage({
 		isError,
 	} = useGetServiceQuery({ slug, locale })
 
-	console.log(service)
 
 	if (isError || !service) return <div>Service not found</div>
 
