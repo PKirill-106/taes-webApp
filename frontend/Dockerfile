@@ -11,6 +11,13 @@ RUN corepack enable && corepack prepare pnpm@latest --activate # Добавля�
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
+
+ARG NEXT_PUBLIC_BACKEND_URL
+ARG NEXT_PUBLIC_API_URL
+
+ENV NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 RUN pnpm build
 
 # Этап 3: Run the application

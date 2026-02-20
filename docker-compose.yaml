@@ -62,6 +62,11 @@ services:
 
   # NEXT.JS FRONTEND
   frontend:
+    build:
+      context: ./frontend
+      args:
+        - NEXT_PUBLIC_BACKEND_URL=https://taes.com.ua
+        - NEXT_PUBLIC_API_URL=https://taes.com.ua/api
     image: ${DOCKERHUB_USERNAME}/frontend:latest
     container_name: frontend
     restart: unless-stopped
@@ -88,6 +93,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./backend/public/uploads:/var/www/uploads:ro
     depends_on:
       - frontend
       - backend
