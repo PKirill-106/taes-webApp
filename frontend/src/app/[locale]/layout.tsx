@@ -7,7 +7,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import NotFound from '../not-found'
 import './globals.css'
 import Footer from '@/components/layout/Footer'
-import { Montserrat, Roboto } from 'next/font/google';
+import { Montserrat, Roboto } from 'next/font/google'
 
 export const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -20,10 +20,27 @@ export const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-	title: 'TAES',
-	description: 'TAES ',
-	icons: {
-		icon: '/favicon.svg',
+	title: {
+		template: '%s | TAES',
+		default: 'TAES — Оцінка майна та моніторинг застави',
+	},
+	description:
+		'Компанія TAES — професійна незалежна оцінка нерухомості, обладнання та моніторинг заставного майна для банків.',
+	keywords: ['оцінка майна', 'моніторинг застави', 'незалежна оцінка', 'ТАЕС'],
+	openGraph: {
+		title: 'TAES — Професійна оцінка майна',
+		description: 'Експертний підхід до оцінки активів та моніторингу застави.',
+		url: 'https://taes.com.ua',
+		siteName: 'TAES',
+		images: [
+			{
+				url: '/uploads/TAES_logo_c73d688742.svg',
+				width: 800,
+				height: 600,
+			},
+		],
+		locale: 'uk_UA',
+		type: 'website',
 	},
 }
 
@@ -49,6 +66,14 @@ export default async function RootLayout({
 
 	return (
 		<html>
+			<head>
+				<link
+					rel='icon'
+					href='@/icon.svg'
+					type='image/<generated>'
+					sizes='<generated>'
+				/>
+			</head>
 			<body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
 				<NextIntlClientProvider messages={messages}>
 					<ClientProvider>
