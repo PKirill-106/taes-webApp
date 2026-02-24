@@ -17,6 +17,10 @@
 			"title": "Recommendations | TAES",
 			"description": "Testimonials from leading banks and corporate clients on their cooperation with TAES in asset valuation and risk control."
 		},
+		"PrivacyPage": {
+			"title": "Privacy Policy | TAES",
+			"description": "We care about your data. Read our rules on the collection, use, and protection of personal information at TAES."
+		}
 	},
 	"Navbar": [
 		{ "name": "Services", "slug": "services" },
