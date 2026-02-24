@@ -13,6 +13,10 @@
 			"title": "Contacts | TAES",
 			"description": "Get in touch with TAES experts for consultation on property valuation or collateral monitoring. Our offices and contact information."
 		},
+		"PartnersPage": {
+			"title": "Recommendations | TAES",
+			"description": "Testimonials from leading banks and corporate clients on their cooperation with TAES in asset valuation and risk control."
+		},
 	},
 	"Navbar": [
 		{ "name": "Services", "slug": "services" },
