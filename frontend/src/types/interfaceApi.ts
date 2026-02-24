@@ -84,6 +84,8 @@ export interface IPartner {
 	publishedAt: string
 	locale: string
 	Order: number
+	Link: string
+	Display_Location: string[]
 	Logo: IImage
 }
 export interface IRecommendation {

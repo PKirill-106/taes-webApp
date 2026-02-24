@@ -50,7 +50,7 @@ export default function ServiceClientPage({
 				</Section>
 			)}
 			<Section>
-				<Partners />
+				<Partners enum={service.Slug} />
 			</Section>
 		</>
 	)

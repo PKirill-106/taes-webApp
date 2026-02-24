@@ -54,3 +54,6 @@ export interface IRecommendationItem {
 	r: IRecommendation
 	id: number
 }
+export interface IPartners {
+	enum?: string
+}
