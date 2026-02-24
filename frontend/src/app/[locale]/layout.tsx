@@ -1,13 +1,18 @@
+import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 import { routing } from '@/i18n/routing'
+import { buildMetadata } from '@/lib/seo/buildMetadata'
 import ClientProvider from '@/providers/clientProvider'
 import type { Metadata } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
-import { getMessages, setRequestLocale } from 'next-intl/server'
+import {
+	getMessages,
+	getTranslations,
+	setRequestLocale,
+} from 'next-intl/server'
+import { Montserrat, Roboto } from 'next/font/google'
 import NotFound from '../not-found'
 import './globals.css'
-import Footer from '@/components/layout/Footer'
-import { Montserrat, Roboto } from 'next/font/google'
 
 export const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -19,29 +24,21 @@ export const roboto = Roboto({
 	subsets: ['latin', 'cyrillic'],
 })
 
-export const metadata: Metadata = {
-	title: {
-		template: '%s | TAES',
-		default: 'TAES — Оцінка майна та моніторинг застави',
-	},
-	description:
-		'Компанія TAES — професійна незалежна оцінка нерухомості, обладнання та моніторинг заставного майна для банків.',
-	keywords: ['оцінка майна', 'моніторинг застави', 'незалежна оцінка', 'ТАЕС'],
-	openGraph: {
-		title: 'TAES — Професійна оцінка майна',
-		description: 'Експертний підхід до оцінки активів та моніторингу застави.',
-		url: 'https://taes.com.ua',
-		siteName: 'TAES',
-		images: [
-			{
-				url: '/uploads/TAES_logo_c73d688742.svg',
-				width: 800,
-				height: 600,
-			},
-		],
-		locale: 'uk_UA',
-		type: 'website',
-	},
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+	const { locale } = await params
+	const t = await getTranslations({ locale, namespace: 'Metadata' })
+
+	return buildMetadata({
+		title: t('title'),
+		description: t('description'),
+		locale: locale,
+		path: '',
+		image: '/uploads/TAES_logo_c73d688742.svg',
+	})
 }
 
 export function generateStaticParams() {
