@@ -5,6 +5,7 @@ type BuildMetadataProps = {
 	description: string
 	locale: string
 	path: string
+	image?: string
 }
 
 export function buildMetadata({
@@ -12,6 +13,7 @@ export function buildMetadata({
 	description,
 	locale,
 	path,
+	image,
 }: BuildMetadataProps): Metadata {
 	const url = `https://taes.com.ua/${locale}${path}`
 
@@ -23,6 +25,7 @@ export function buildMetadata({
 			description,
 			url,
 			type: 'website',
+			images: image ? [{ url: image }] : undefined,
 		},
 		alternates: {
 			canonical: url,
