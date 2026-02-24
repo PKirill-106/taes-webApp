@@ -1,8 +1,10 @@
 {
 	"Metadata": {
-		"title": "TAES — Independent Property Valuation & Collateral Monitoring",
-		"description": "Professional valuation of real estate, equipment, vehicles, and property rights. Expert collateral asset monitoring for banks and financial institutions throughout Ukraine.",
-		"keywords": "property valuation, collateral monitoring, independent appraisal, TAES, valuation for banks, collateral inspection"
+		"MainPage": {
+			"title": "TAES — Independent Property Valuation & Collateral Monitoring",
+			"description": "Professional valuation of real estate, equipment, vehicles, and property rights. Expert collateral asset monitoring for banks and financial institutions throughout Ukraine.",
+			"keywords": "property valuation, collateral monitoring, independent appraisal, TAES, valuation for banks, collateral inspection"
+		},
 	},
 	"Navbar": [
 		{ "name": "Services", "slug": "services" },
