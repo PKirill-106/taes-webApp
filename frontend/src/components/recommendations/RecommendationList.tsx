@@ -25,7 +25,11 @@ export default function RecommendationList() {
 
 	if (!recommendations || isError) return null
 
-	const list = recommendations.slice(0, 2)
+	const sortedRecommendations = [...recommendations].sort(
+		(a, b) => a.Order - b.Order,
+	)
+
+	const list = sortedRecommendations.slice(0, 2)
 
 	return (
 		<div className='flex flex-col md:grid grid-cols-2 gap-6'>

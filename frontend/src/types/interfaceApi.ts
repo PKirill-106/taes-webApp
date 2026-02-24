@@ -96,6 +96,7 @@ export interface IRecommendation {
 	updatedAt: string
 	publishedAt: string
 	locale: string
+	Order: number
 	Partner: IPartner
 	Image: IImage | null
 }

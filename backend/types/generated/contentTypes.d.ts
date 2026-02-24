@@ -751,6 +751,12 @@ export interface ApiRecommendationRecommendation
       'oneToMany',
       'api::recommendation.recommendation'
     >;
+    Order: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Partner: Schema.Attribute.Relation<'oneToOne', 'api::partner.partner'>;
     publishedAt: Schema.Attribute.DateTime;
     Text: Schema.Attribute.String &

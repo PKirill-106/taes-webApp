@@ -38,6 +38,14 @@
         "files"
       ]
     },
+    "Order": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "Partner": {
       "type": "relation",
       "relation": "oneToOne",
