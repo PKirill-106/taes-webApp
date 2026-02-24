@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - main[]
+      - main
 env:
   IMAGE_BACKEND: ${{ secrets.DOCKERHUB_USERNAME }}/backend
   IMAGE_FRONTEND: ${{ secrets.DOCKERHUB_USERNAME }}/frontend
