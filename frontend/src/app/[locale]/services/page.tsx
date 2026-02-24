@@ -1,33 +1,28 @@
-'use client'
+import ServicesClientPage from '@/components/services/ServicesClientPage'
+import { buildMetadata } from '@/lib/seo/buildMetadata'
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 
-import MainServices from '@/components/services/MainServices'
-import { ServiceSkeleton } from '@/components/services/ServiceSkeletons'
-import Section from '@/components/ui/Section'
-import { useGetServicesQuery } from '@/state/service/serviceApiSlice'
-import { useLocale } from 'next-intl'
+export async function generateMetadata({
+	params,
+}: {
+	params: { locale: string }
+}): Promise<Metadata> {
+	const { locale } = params
+
+	const t = await getTranslations({
+		locale,
+		namespace: 'Services',
+	})
+
+	return buildMetadata({
+		title: t('title'),
+		description: t('description'),
+		locale,
+		path: '/services',
+	})
+}
 
 export default function ServicesPage() {
-	const locale = useLocale()
-	const { data: services, isLoading, isError } = useGetServicesQuery(locale)
-
-	if (isError || !services) return <div>Service not found</div>
-
-	return (
-		<>
-			{isLoading ? (
-				<Section>
-					<ServiceSkeleton />
-					<ServiceSkeleton />
-				</Section>
-			) : (
-				services.map(service => (
-					<MainServices
-						key={service.documentId}
-						service={service}
-						showButton={true}
-					/>
-				))
-			)}
-		</>
-	)
+	return <ServicesClientPage />
 }

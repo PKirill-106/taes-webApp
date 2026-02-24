@@ -77,6 +77,8 @@
 		"workingHours": "Working hours"
 	},
 	"Services": {
+		"title": "Services",
+		"description": "The company provides independent property valuation services for banks and corporate clients for the purposes of lending, financial reporting, and risk management.",
 		"buttonText": "Learn more"
 	}
 }
