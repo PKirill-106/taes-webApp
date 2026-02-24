@@ -65,8 +65,8 @@ services:
     build:
       context: ./frontend
       args:
-        - NEXT_PUBLIC_BACKEND_URL=https://taes.com.ua
-        - NEXT_PUBLIC_API_URL=https://taes.com.ua/api
+        - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
+        - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     image: ${DOCKERHUB_USERNAME}/frontend:latest
     container_name: frontend
     restart: unless-stopped

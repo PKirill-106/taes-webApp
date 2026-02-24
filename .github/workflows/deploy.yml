@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - main
+      - main[]
 env:
   IMAGE_BACKEND: ${{ secrets.DOCKERHUB_USERNAME }}/backend
   IMAGE_FRONTEND: ${{ secrets.DOCKERHUB_USERNAME }}/frontend
@@ -38,6 +38,9 @@ jobs:
         with:
           context: ./frontend
           push: true
+          build-args: |
+            NEXT_PUBLIC_BACKEND_URL=https://taes.com.ua
+            NEXT_PUBLIC_API_URL=https://taes.com.ua/api
           tags: |
             ${{ env.IMAGE_FRONTEND }}:latest
             ${{ env.IMAGE_FRONTEND }}:${{ github.sha }}
