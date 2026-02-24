@@ -2,6 +2,25 @@ import Contacts from '@/components/contacts/Contacts'
 import Section from '@/components/ui/Section'
 import { useTranslations } from 'next-intl'
 import Map from '../../../components/ui/Map'
+import { getTranslations } from 'next-intl/server'
+import { buildMetadata } from '@/lib/seo/buildMetadata'
+
+type Props = {
+	params: Promise<{ slug: string; locale: string }>
+}
+
+export async function generateMetadata({ params }: Props) {
+	const { locale } = await params
+
+	const t = await getTranslations({ locale, namespace: 'Metadata.ContactsPage' })
+
+	return buildMetadata({
+		title: t('title'),
+		description: t('description'),
+		locale: locale,
+		path: '/contacts',
+	})
+}
 
 export default function ContactsPage() {
 	const t = useTranslations('Contacts')

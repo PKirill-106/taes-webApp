@@ -9,6 +9,10 @@
 			"title": "About Us | TAES",
 			"description": "Learn more about TAES: our experience in property valuation, our team of experts, and our principles of independence and objectivity."
 		},
+		"ContactsPage": {
+			"title": "Contacts | TAES",
+			"description": "Get in touch with TAES experts for consultation on property valuation or collateral monitoring. Our offices and contact information."
+		},
 	},
 	"Navbar": [
 		{ "name": "Services", "slug": "services" },
