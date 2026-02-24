@@ -3,6 +3,7 @@ import Section from '@/components/ui/Section'
 import { ArrowUpRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import ImageContainer from './ImageContainer'
+import Link from 'next/link'
 
 export default function AboutUs() {
 	const t = useTranslations('HomePage.AboutUs')
@@ -29,12 +30,14 @@ export default function AboutUs() {
 							<p key={sentence}>{sentence}.</p>
 						))}
 					</div>
-					<Button variant='secondary' className='w-full md:w-fit'>
-						<p>{t('buttonText')}</p>
-						<div className='bg-heading rounded-full p-2'>
-							<ArrowUpRight className='size-3 stroke-3 text-white group-hover: duration-200' />
-						</div>
-					</Button>
+					<Link href='/services'>
+						<Button variant='secondary' className='w-full md:w-fit'>
+							<p>{t('buttonText')}</p>
+							<div className='bg-heading rounded-full p-2'>
+								<ArrowUpRight className='size-3 stroke-3 text-white group-hover: duration-200' />
+							</div>
+						</Button>
+					</Link>
 				</div>
 			</div>
 			<ImageContainer />
