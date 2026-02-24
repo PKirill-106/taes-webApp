@@ -18,8 +18,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		return res.data.data[0]
 	})
 
-	console.log('DEBUG SEO RESULT:', result)
-
 	if ('error' in result || !result.data) {
 		return { title: 'Послуга не знайдена' }
 	}
