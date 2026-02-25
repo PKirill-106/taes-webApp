@@ -52,7 +52,7 @@ export default function BannerSlide(props: IBannerSlide) {
 						</li>
 					))}
 				</ul>
-				<Link href={`/service/${props.banner.Service.Slug}`} className='mb-8'>
+				<Link href={`/services/${props.banner.Service.Slug}`} className='mb-8'>
 					<Button
 						variant='grey'
 						className={`flex items-center gap-2 bg-${bannerColor} w-full md:max-w-xs lg:max-w-sm h-full max-h-14 text-heading group`}
