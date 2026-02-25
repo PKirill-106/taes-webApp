@@ -46,7 +46,7 @@
       },
       "required": true
     },
-    "Footer_Adress": {
+    "Registered_Adress": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
