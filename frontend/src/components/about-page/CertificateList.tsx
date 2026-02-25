@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
 import type { Swiper as SwiperType } from 'swiper'
-import { Navigation } from 'swiper/modules'
+import { Autoplay, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.css'
 import Section from '../ui/Section'
@@ -38,8 +38,14 @@ export default function CertificateList() {
 				<div className='space-y-3!'>
 					<div className='relative'>
 						<Swiper
-							modules={[Navigation]}
+							modules={[Navigation, Autoplay]}
 							spaceBetween={24}
+							autoplay={{
+								delay: 800,
+								disableOnInteraction: true,
+								pauseOnMouseEnter: true,
+							}}
+							speed={1000}
 							onSwiper={swiper => {
 								swiperRef.current = swiper
 								setIsBeginning(swiper.isBeginning)
@@ -50,7 +56,7 @@ export default function CertificateList() {
 								setIsEnd(swiper.isEnd)
 							}}
 							breakpoints={{
-								320: { slidesPerView: 1.2 },
+								320: { slidesPerView: 1.5 },
 								640: { slidesPerView: 2.5 },
 								1024: { slidesPerView: 3.5 },
 							}}
@@ -76,7 +82,7 @@ export default function CertificateList() {
 													src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${cert.url}`}
 													alt={`Certificate ${id + 1}`}
 													fill
-													className='object-contain'
+													className='object-cover'
 													unoptimized
 												/>
 											</div>
