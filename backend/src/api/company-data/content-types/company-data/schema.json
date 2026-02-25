@@ -46,6 +46,15 @@
       },
       "required": true
     },
+    "Footer_Adress": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
     "WorkHours": {
       "type": "string",
       "pluginOptions": {

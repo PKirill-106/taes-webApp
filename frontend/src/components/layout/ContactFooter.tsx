@@ -35,7 +35,7 @@ export default function ContactFooter() {
 					))
 				) : (
 					<>
-						<span>{company.Adress}</span>
+						<span>{company.Footer_Adress}</span>
 						<span>{company.WorkHours}</span>
 					</>
 				)}

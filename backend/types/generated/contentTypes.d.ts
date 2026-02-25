@@ -560,6 +560,13 @@ export interface ApiCompanyDataCompanyData extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    Footer_Adress: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
