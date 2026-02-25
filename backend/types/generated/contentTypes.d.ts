@@ -528,7 +528,7 @@ export interface ApiCompanyDataCompanyData extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    Adress: Schema.Attribute.String &
+    Address: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -586,7 +586,7 @@ export interface ApiCompanyDataCompanyData extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    Registered_Adress: Schema.Attribute.String &
+    Registered_Address: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

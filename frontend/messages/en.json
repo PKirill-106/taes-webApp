@@ -30,7 +30,7 @@
 	],
 	"Footer": {
 		"name": "Privacy policy",
-		"registeredAdress": "Registered Adress",
+		"registeredAddress": "Registered Address",
 		"slug": "privacy-policy"
 	},
 	"HomePage": {
@@ -100,8 +100,8 @@
 	"Contacts": {
 		"title": "Contacts",
 		"subTitle": "Kyiv - <primary>Head office</primary>",
-		"adress": "Adress",
-		"registeredAdress": "Registered Adress",
+		"address": "Address",
+		"registeredAddress": "Registered Address",
 		"workingHours": "Working hours"
 	},
 	"Services": {

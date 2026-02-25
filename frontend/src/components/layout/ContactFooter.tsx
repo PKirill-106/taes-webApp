@@ -37,12 +37,12 @@ export default function ContactFooter() {
 					))
 				) : (
 					<>
-						{company.Registered_Adress && (
+						{company.Registered_Address && (
 							<span>
-								{t('registeredAdress')}: {company.Registered_Adress}
+								{t('registeredAddress')}: {company.Registered_Address}
 							</span>
 						)}
-						<span>{company.Adress}</span>
+						<span>{company.Address}</span>
 						<span>{company.WorkHours}</span>
 					</>
 				)}

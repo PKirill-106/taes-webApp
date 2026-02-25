@@ -35,12 +35,12 @@ export default function Contacts() {
 					) : (
 						<div className='space-y-5 font-light'>
 							<p>
-								<span className='font-bold'>{t('adress')}:</span>{' '}
-								{company.Adress}
+								<span className='font-bold'>{t('address')}:</span>{' '}
+								{company.Address}
 							</p>
 							<p>
-								<span className='font-bold'>{t('registeredAdress')}:</span>{' '}
-								{company.Registered_Adress}
+								<span className='font-bold'>{t('registeredAddress')}:</span>{' '}
+								{company.Registered_Address}
 							</p>
 							<h4 className='text-primary font-bold font-sans!'>
 								<Link

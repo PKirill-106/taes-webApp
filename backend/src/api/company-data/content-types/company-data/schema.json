@@ -37,7 +37,7 @@
       },
       "required": true
     },
-    "Adress": {
+    "Address": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -46,7 +46,7 @@
       },
       "required": true
     },
-    "Registered_Adress": {
+    "Registered_Address": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
