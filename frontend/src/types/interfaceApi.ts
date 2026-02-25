@@ -67,7 +67,7 @@ export interface ICompanyData {
 	publishedAt: string
 	locale: string
 	Adress: string
-	Footer_Adress: string
+	Registered_Adress: string
 	WorkHours: string
 	Description: IRichTextBlock[]
 	Logo: IImage

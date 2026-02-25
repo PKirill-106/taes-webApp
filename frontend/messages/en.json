@@ -28,7 +28,11 @@
 		{ "name": "Recommendations", "slug": "recommendations" },
 		{ "name": "Contacts", "slug": "contacts" }
 	],
-	"Footer": { "name": "Privacy policy", "slug": "privacy-policy" },
+	"Footer": {
+		"name": "Privacy policy",
+		"registeredAdress": "Registered Adress",
+		"slug": "privacy-policy"
+	},
 	"HomePage": {
 		"AboutUsInNumbers": [
 			{
@@ -97,6 +101,7 @@
 		"title": "Contacts",
 		"subTitle": "Kyiv - <primary>Head office</primary>",
 		"adress": "Adress",
+		"registeredAdress": "Registered Adress",
 		"workingHours": "Working hours"
 	},
 	"Services": {

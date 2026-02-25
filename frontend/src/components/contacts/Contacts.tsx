@@ -38,6 +38,10 @@ export default function Contacts() {
 								<span className='font-bold'>{t('adress')}:</span>{' '}
 								{company.Adress}
 							</p>
+							<p>
+								<span className='font-bold'>{t('registeredAdress')}:</span>{' '}
+								{company.Registered_Adress}
+							</p>
 							<h4 className='text-primary font-bold font-sans!'>
 								<Link
 									href={`tel:${company.Phone}`}
