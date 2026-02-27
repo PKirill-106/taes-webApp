@@ -6,7 +6,7 @@ import Map from '@/components/ui/Map'
 import Partners from '@/components/ui/Partners'
 import Section from '@/components/ui/Section'
 import { useGetServiceQuery } from '@/state/service/serviceApiSlice'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { use } from 'react'
 
 export default function ServiceClientPage({
@@ -15,6 +15,8 @@ export default function ServiceClientPage({
 	params: Promise<{ slug: string }>
 }) {
 	const { slug } = use(params)
+
+	const t = useTranslations('HomePage.Partners')
 
 	const locale = useLocale()
 	const {
@@ -49,7 +51,12 @@ export default function ServiceClientPage({
 					<Map className='aspect-square md:aspect-video' mapSrc={mapSrc} />
 				</Section>
 			)}
-			<Section>
+			<Section className='flex flex-col items-center gap-6'>
+				<h3 className='text-center'>
+					{t.rich('title', {
+						primary: chunks => <span className='text-primary'>{chunks}</span>,
+					})}
+				</h3>
 				<Partners enum={service.Slug} />
 			</Section>
 		</>
