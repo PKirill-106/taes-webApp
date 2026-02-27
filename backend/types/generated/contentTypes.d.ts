@@ -766,7 +766,7 @@ export interface ApiRecommendationRecommendation
       }>;
     Partner: Schema.Attribute.Relation<'oneToOne', 'api::partner.partner'>;
     publishedAt: Schema.Attribute.DateTime;
-    Text: Schema.Attribute.String &
+    Text: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
