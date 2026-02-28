@@ -1,11 +1,11 @@
 # TAES WebApp 🚀
 
-A high-performance, full-stack web application built with **Next.js 15** and **Strapi 5**. This project serves as a corporate platform featuring dynamic content management, multi-language support, and a fully containerized deployment pipeline.
+A high-performance, full-stack web application built with **Next.js 16** and **Strapi 5**. This project serves as a corporate platform featuring dynamic content management, multi-language support, and a fully containerized deployment pipeline.
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- **Framework**: Next.js 15 (App Router) with Turbopack
+- **Framework**: Next.js 16 (App Router) with Turbopack
 - **State Management**: Redux Toolkit & RTK Query
 - **Internationalization**: `next-intl` (Multi-language: RU, EN, UZ)
 - **Styling**: Tailwind CSS & Shadcn UI
