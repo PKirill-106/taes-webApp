@@ -26,7 +26,7 @@ export default function ServiceClientPage({
 	} = useGetServiceQuery({ slug, locale })
 
 	const mapSrc =
-		'https://www.google.com/maps/d/embed?mid=1-Yl4H6u6ml_4D0aALfPs1qJ-CHBAbzY&ehbc=2E312F'
+		'https://www.google.com/maps/d/embed?mid=1lPuMYGbAGt2RSAz63_4BASjA0aFu4uY&ehbc=2E312F'
 
 	if (isError || !service) return <div>Service not found</div>
 
