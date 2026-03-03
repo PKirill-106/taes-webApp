@@ -6,7 +6,7 @@ export default function ServiceSection(props: IServiceSectionProps) {
 		<Section className='space-y-8'>
 			<h4 className='md:text-center'>{props.section.title}</h4>
 			{typeof props.section.content === 'string' ? (
-				<p className='small-p md:text-center md:max-w-xl md:mx-auto'>
+				<p className='small-p md:text-center'>
 					{props.section.content}
 				</p>
 			) : (
