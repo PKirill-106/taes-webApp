@@ -49,6 +49,22 @@ export default function Partners(props: IPartners) {
 	const count = filteredPartners.length
 
 	const PartnerItem = (partner: IPartner) => {
+		let targetLink = partner.Link
+
+		if (props.enum && partner.Display_Location) {
+			const locations = partner.Display_Location
+
+			if (Array.isArray(locations)) {
+				const specificLoc = (locations as any[]).find(
+					loc => loc && typeof loc === 'object' && loc.place === props.enum,
+				)
+
+				if (specificLoc?.link) {
+					targetLink = specificLoc.link
+				}
+			}
+		}
+
 		const PartnerImage = (
 			<Image
 				src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${partner.Logo.url}`}
@@ -64,7 +80,16 @@ export default function Partners(props: IPartners) {
 				className={`relative max-w-50 w-full h-20 ${partner.Link && 'hover:scale-110 active:scale-110 duration-200 cursor-pointer'}`}
 			>
 				{partner.Link ? (
-					<Link href={partner.Link} target='_blank'>
+					<Link
+						href={
+							props.enum && Array.isArray(partner.Display_Location)
+								? (partner.Display_Location as any[]).find(
+										loc => typeof loc === 'object' && loc.place === props.enum,
+									)?.link || partner.Link
+								: partner.Link
+						}
+						target='_blank'
+					>
 						{PartnerImage}
 					</Link>
 				) : (
@@ -125,7 +150,8 @@ export default function Partners(props: IPartners) {
 			<style jsx global>{`
 				.linear-swiper-partners .swiper-wrapper {
 					transition-timing-function: linear !important;
-				}
+				}import { IDisplay_Location } from '../../types/interfaceApi';
+
 			`}</style>
 		</>
 	)
