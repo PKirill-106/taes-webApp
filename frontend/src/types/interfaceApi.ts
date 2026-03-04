@@ -41,8 +41,8 @@ export interface IBanner {
 	Service: Pick<IService, 'id' | 'documentId' | 'Slug' | 'Image'>
 }
 export interface IServiceSection {
-  title: string
-  content: string | string[]
+	title: string
+	content: string | string[]
 }
 export interface IService {
 	id: number
@@ -74,6 +74,10 @@ export interface ICompanyData {
 	White_Logo: IImage
 	Certificates: IImage[]
 }
+export interface IDisplay_Location {
+	link: string
+	place: string
+}
 export interface IPartner {
 	id: number
 	documentId: string
@@ -86,7 +90,7 @@ export interface IPartner {
 	locale: string
 	Order: number
 	Link: string
-	Display_Location: string[]
+	Display_Location: IDisplay_Location[] | string[]
 	Logo: IImage
 }
 export interface IRecommendation {

@@ -1,6 +1,6 @@
 'use client'
 import { useGetPartnersQuery } from '@/state/partners/partnerApiSlice'
-import { IPartner } from '@/types/interfaceApi'
+import { IDisplay_Location, IPartner } from '@/types/interfaceApi'
 import { IPartners } from '@/types/interfacesProps'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
@@ -20,9 +20,31 @@ export default function Partners(props: IPartners) {
 		return
 	}
 
-	const filteredPartners = props.enum
-		? [...partners].filter(p => p.Display_Location?.includes(props.enum!))
-		: [...partners].filter(p => !p.Display_Location?.includes('none'))
+	const filteredPartners = partners.filter(p => {
+		const locations = p.Display_Location
+
+		if (!locations || locations.length === 0) return false
+
+		const isStringArray = typeof locations[0] === 'string'
+
+		if (props.enum) {
+			if (isStringArray) {
+				return (locations as string[]).includes(props.enum)
+			} else {
+				return (locations as IDisplay_Location[]).some(
+					loc => loc.place === props.enum,
+				)
+			}
+		} else {
+			if (isStringArray) {
+				return (locations as string[])?.some(loc => !loc.includes('none'))
+			} else {
+				return (locations as IDisplay_Location[])?.some(
+					loc => loc.place !== 'none',
+				)
+			}
+		}
+	})
 
 	const count = filteredPartners.length
 
