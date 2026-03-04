@@ -82,7 +82,7 @@ export default function CertificateList() {
 													src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${cert.url}`}
 													alt={`Certificate ${id + 1}`}
 													fill
-													className='object-cover'
+													className='object-contain'
 													unoptimized
 												/>
 											</div>
